@@ -114,7 +114,6 @@ public class TsscTopic implements Serializable {
 	public TsscStory removeTsscStory(TsscStory tsscStory) {
 		getTsscStories().remove(tsscStory);
 		tsscStory.setTsscTopic(null);
-
 		return tsscStory;
 	}
 }
