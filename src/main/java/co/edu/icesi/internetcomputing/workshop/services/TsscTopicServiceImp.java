@@ -1,5 +1,7 @@
 package co.edu.icesi.internetcomputing.workshop.services;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,14 +20,34 @@ public class TsscTopicServiceImp implements TsscTopicService {
 
 	@Override
 	public boolean save(TsscTopic tsscTopic) {
+		
 		if (tsscTopic == null) {
 			throw new NullPointerException("El topic no puede ser Nulo");
 		}
-		if(!(tsscTopic.getDefaultGroups() > 0) || !(tsscTopic.getDefaultGroups() >0)){
+		
+		if(!(tsscTopic.getDefaultGroups() > 0) || !(tsscTopic.getDefaultSprints() >0)){
 			return false;
-		}		
-		tsscTopicRepository.save(tsscTopic);
+		}	
+		
+		tsscTopicRepository.save(tsscTopic);		
 		return true;
 	}
+
+	@Override
+	public void removeAll() {
+		tsscTopicRepository.deleteAll();
+	}
+
+	@Override
+	public Optional<TsscTopic> findById(long id) {
+		return tsscTopicRepository.findById(id);
+	}
+
+	@Override
+	public Iterable<TsscTopic> findAll() {
+		return tsscTopicRepository.findAll();
+	}
+	
+	
 	
 }

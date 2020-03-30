@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="616" started-at="2020-03-30T07:29:54 COT" finished-at="2020-03-30T07:29:55 COT">
+    <groups>
+      <group name="Update">
+        <method signature="TsscTopicServiceTest.testUpdateTopic1()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@3043fe0e]" name="testUpdateTopic1" class="co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest"/>
+        <method signature="TsscTopicServiceTest.testUpdateTopic2()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@3043fe0e]" name="testUpdateTopic2" class="co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest"/>
+        <method signature="TsscTopicServiceTest.testUpdateTopic3()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@3043fe0e]" name="testUpdateTopic3" class="co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest"/>
+      </group> <!-- Update -->
+    </groups>
+    <test name="Default test" duration-ms="616" started-at="2020-03-30T07:29:54 COT" finished-at="2020-03-30T07:29:55 COT">
+      <class name="co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest">
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@3043fe0e]" name="iniMock" is-config="true" duration-ms="306" started-at="2020-03-30T07:29:55 COT" finished-at="2020-03-30T07:29:55 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="testAddTopic1()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@3043fe0e]" name="testAddTopic1" duration-ms="65" started-at="2020-03-30T07:29:55 COT" description="Add a topic without errors" finished-at="2020-03-30T07:29:55 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddTopic1 -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@3043fe0e]" name="iniMock" is-config="true" duration-ms="4" started-at="2020-03-30T07:29:55 COT" finished-at="2020-03-30T07:29:55 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="testAddTopic2()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@3043fe0e]" name="testAddTopic2" duration-ms="5" started-at="2020-03-30T07:29:55 COT" description="Added a topic where groups are not greater than zero" finished-at="2020-03-30T07:29:55 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddTopic2 -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@3043fe0e]" name="iniMock" is-config="true" duration-ms="2" started-at="2020-03-30T07:29:55 COT" finished-at="2020-03-30T07:29:55 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="testAddTopic3()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@3043fe0e]" name="testAddTopic3" duration-ms="4" started-at="2020-03-30T07:29:55 COT" description="Added a topic where sprints are not greater than zero" finished-at="2020-03-30T07:29:55 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddTopic3 -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@3043fe0e]" name="iniMock" is-config="true" duration-ms="1" started-at="2020-03-30T07:29:55 COT" finished-at="2020-03-30T07:29:55 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="testAddTopicNull()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@3043fe0e]" name="testAddTopicNull" duration-ms="2" started-at="2020-03-30T07:29:55 COT" description="Attempt to add null topic" finished-at="2020-03-30T07:29:55 COT">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[El topic no puede ser Nulo]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: El topic no puede ser Nulo
+at co.edu.icesi.internetcomputing.workshop.services.TsscTopicServiceImp.save(TsscTopicServiceImp.java:25)
+at co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest.testAddTopicNull(TsscTopicServiceTest.java:89)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddTopicNull -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@3043fe0e]" name="iniMock" is-config="true" duration-ms="8" started-at="2020-03-30T07:29:55 COT" finished-at="2020-03-30T07:29:55 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="testUpdateTopic1()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@3043fe0e]" name="testUpdateTopic1" duration-ms="2" started-at="2020-03-30T07:29:55 COT" description="Update the topic without errors" finished-at="2020-03-30T07:29:55 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateTopic1 -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@3043fe0e]" name="iniMock" is-config="true" duration-ms="2" started-at="2020-03-30T07:29:55 COT" finished-at="2020-03-30T07:29:55 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="testUpdateTopic2()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@3043fe0e]" name="testUpdateTopic2" duration-ms="2" started-at="2020-03-30T07:29:55 COT" description="Update a topic where groups are not greater than zero" finished-at="2020-03-30T07:29:55 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateTopic2 -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@3043fe0e]" name="iniMock" is-config="true" duration-ms="3" started-at="2020-03-30T07:29:55 COT" finished-at="2020-03-30T07:29:55 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="testUpdateTopic3()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@3043fe0e]" name="testUpdateTopic3" duration-ms="4" started-at="2020-03-30T07:29:55 COT" description="Update a topic where sprints are not greater than zero" finished-at="2020-03-30T07:29:55 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateTopic3 -->
+      </class> <!-- co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
