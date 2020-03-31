@@ -2,7 +2,6 @@ package co.edu.icesi.internetcomputing.workshop.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.math.BigDecimal;
 
 /**
  * The persistent class for the TSSC_TIME_INTERVAL database table.

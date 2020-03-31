@@ -1,6 +1,5 @@
 package co.edu.icesi.internetcomputing.workshop.services;
 
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,8 +38,8 @@ public class TsscTopicServiceImp implements TsscTopicService {
 	}
 
 	@Override
-	public Optional<TsscTopic> findById(long id) {
-		return tsscTopicRepository.findById(id);
+	public TsscTopic findById(long id) {
+		return tsscTopicRepository.findById(id).get();
 	}
 
 	@Override

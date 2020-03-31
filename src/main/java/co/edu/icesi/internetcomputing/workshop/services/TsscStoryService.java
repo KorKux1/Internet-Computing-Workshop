@@ -1,5 +1,7 @@
 package co.edu.icesi.internetcomputing.workshop.services;
 
-public interface TsscStoryService {
+import co.edu.icesi.internetcomputing.workshop.model.TsscStory;
 
+public interface TsscStoryService {
+	public boolean save(TsscStory tsscStory);
 }

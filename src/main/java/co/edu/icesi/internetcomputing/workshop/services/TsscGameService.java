@@ -9,4 +9,6 @@ public interface TsscGameService {
 	public Optional<TsscGame> findById(long id);
 
 	public boolean save(TsscGame tsscGame);
+	
+	public boolean save2(TsscGame tsscGame);
 }

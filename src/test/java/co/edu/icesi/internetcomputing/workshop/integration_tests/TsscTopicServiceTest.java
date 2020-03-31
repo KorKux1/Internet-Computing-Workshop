@@ -1,4 +1,4 @@
-package co.edu.icesi.internetcomputing.workshop.unit_tests;
+package co.edu.icesi.internetcomputing.workshop.integration_tests;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.verify;
