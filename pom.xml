@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>co.edu.icesi.internetcomputing.workshop</groupId>
-	<artifactId>SystemManagementActivities</artifactId>
+	<artifactId>CristhianCastilloMeneses</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SystemManagementActivities</name>
 	<description>Demo project for Spring Boot</description>
@@ -26,11 +26,14 @@
 	  </repository>
 	</repositories>
  
-	
-
 	<dependencies>
 		<!--  External Dependencies -->
 		
+		<dependency>
+	    	<groupId>com.h2database</groupId>
+	        <artifactId>h2</artifactId>
+	        <scope>runtime</scope>
+        </dependency>
 		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
 		<dependency>
 			<groupId>org.mockito</groupId>
@@ -47,20 +50,19 @@
 		    <scope>test</scope>
 		</dependency>
 	
-		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+		
 		<dependency>
-		    <groupId>com.fasterxml.jackson.core</groupId>
-		    <artifactId>jackson-annotations</artifactId>
-		    <version>2.10.3</version>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.7.4</version>
 		</dependency>
 		
 		<!-- ./ External Dependencies -->
 			
 	<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
 		<dependency>
-		    <groupId>org.springframework.boot</groupId>
-		    <artifactId>spring-boot-starter-data-jpa</artifactId>
-		    <version>2.2.5.RELEASE</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 	
 		<dependency>

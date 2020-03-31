@@ -9,7 +9,7 @@ import co.edu.icesi.internetcomputing.workshop.repositories.TsscTopicRepository;
 
 @Service
 public class TsscTopicServiceImp implements TsscTopicService {
-
+	
 	private TsscTopicRepository tsscTopicRepository;
 	
 	@Autowired
@@ -41,7 +41,7 @@ public class TsscTopicServiceImp implements TsscTopicService {
 	public TsscTopic findById(long id) {
 		return tsscTopicRepository.findById(id).get();
 	}
-
+	
 	@Override
 	public Iterable<TsscTopic> findAll() {
 		return tsscTopicRepository.findAll();

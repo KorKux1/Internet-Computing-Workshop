@@ -3,13 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest">
+      <class name="co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest">
         <methods>
-          <include name="initialize"/>
           <include name="testAddStory1"/>
-          <include name="iniMock"/>
+          <include name="initialize"/>
         </methods>
-      </class> <!-- co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest -->
+      </class> <!-- co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

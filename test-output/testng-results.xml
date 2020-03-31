@@ -1,57 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="568" started-at="2020-03-30T20:42:03 COT" finished-at="2020-03-30T20:42:03 COT">
+  <suite name="Default suite" duration-ms="13862" started-at="2020-03-31T00:11:19 COT" finished-at="2020-03-31T00:11:33 COT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="568" started-at="2020-03-30T20:42:03 COT" finished-at="2020-03-30T20:42:03 COT">
-      <class name="co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@4d50efb8]" name="initialize" is-config="true" duration-ms="18" started-at="2020-03-30T20:42:03 COT" finished-at="2020-03-30T20:42:03 COT">
+    <test name="Default test" duration-ms="13862" started-at="2020-03-31T00:11:19 COT" finished-at="2020-03-31T00:11:33 COT">
+      <class name="co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest">
+        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest@3246fb96]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="38" started-at="2020-03-31T00:11:19 COT" finished-at="2020-03-31T00:11:19 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest@3246fb96]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="12496" started-at="2020-03-31T00:11:19 COT" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2020-03-31T00:11:32 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="PASS" signature="initialize()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest@3246fb96]" name="initialize" is-config="true" duration-ms="1158" started-at="2020-03-31T00:11:32 COT" finished-at="2020-03-31T00:11:33 COT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@4d50efb8]" name="iniMock" is-config="true" duration-ms="318" started-at="2020-03-30T20:42:03 COT" finished-at="2020-03-30T20:42:03 COT">
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest@3246fb96]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="5" started-at="2020-03-31T00:11:33 COT" finished-at="2020-03-31T00:11:33 COT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest.testAddStory1()]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- iniMock -->
-        <test-method status="PASS" signature="testAddGame2()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@4d50efb8]" name="testAddGame2" duration-ms="52" started-at="2020-03-30T20:42:03 COT" finished-at="2020-03-30T20:42:03 COT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testAddGame2 -->
-        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@4d50efb8]" name="iniMock" is-config="true" duration-ms="30" started-at="2020-03-30T20:42:03 COT" finished-at="2020-03-30T20:42:03 COT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- iniMock -->
-        <test-method status="PASS" signature="testAddGame3()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@4d50efb8]" name="testAddGame3" duration-ms="2" started-at="2020-03-30T20:42:03 COT" finished-at="2020-03-30T20:42:03 COT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testAddGame3 -->
-        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@4d50efb8]" name="iniMock" is-config="true" duration-ms="1" started-at="2020-03-30T20:42:03 COT" finished-at="2020-03-30T20:42:03 COT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- iniMock -->
-        <test-method status="PASS" signature="testAddGame4()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@4d50efb8]" name="testAddGame4" duration-ms="6" started-at="2020-03-30T20:42:03 COT" finished-at="2020-03-30T20:42:03 COT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testAddGame4 -->
-        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@4d50efb8]" name="iniMock" is-config="true" duration-ms="9" started-at="2020-03-30T20:42:03 COT" finished-at="2020-03-30T20:42:03 COT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- iniMock -->
-        <test-method status="PASS" signature="testAddGame5()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@4d50efb8]" name="testAddGame5" duration-ms="1" started-at="2020-03-30T20:42:03 COT" finished-at="2020-03-30T20:42:03 COT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testAddGame5 -->
-        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@4d50efb8]" name="iniMock" is-config="true" duration-ms="2" started-at="2020-03-30T20:42:03 COT" finished-at="2020-03-30T20:42:03 COT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- iniMock -->
-        <test-method status="PASS" signature="testAddStory1()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@4d50efb8]" name="testAddStory1" duration-ms="26" started-at="2020-03-30T20:42:03 COT" finished-at="2020-03-30T20:42:03 COT">
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="testAddStory1()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest@3246fb96]" name="testAddStory1" duration-ms="85" started-at="2020-03-31T00:11:33 COT" finished-at="2020-03-31T00:11:33 COT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddStory1 -->
-      </class> <!-- co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest@3246fb96]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="6" started-at="2020-03-31T00:11:33 COT" finished-at="2020-03-31T00:11:33 COT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest.testAddStory1()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest@3246fb96]" name="springTestContextAfterTestClass" is-config="true" duration-ms="3" started-at="2020-03-31T00:11:33 COT" finished-at="2020-03-31T00:11:33 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+      </class> <!-- co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

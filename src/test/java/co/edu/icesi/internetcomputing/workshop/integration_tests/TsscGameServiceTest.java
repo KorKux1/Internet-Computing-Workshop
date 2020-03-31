@@ -1,25 +1,28 @@
 package co.edu.icesi.internetcomputing.workshop.integration_tests;
 
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyNoMoreInteractions;
-import static org.mockito.Mockito.verifyZeroInteractions;
-import static org.mockito.Mockito.when;
+
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertNull;
 import static org.testng.Assert.assertTrue;
 
 import java.util.Optional;
 
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.orm.jpa.JpaObjectRetrievalFailureException;
+import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
+import co.edu.icesi.internetcomputing.workshop.SystemManagementActivitiesApplication;
 import co.edu.icesi.internetcomputing.workshop.model.TsscGame;
 import co.edu.icesi.internetcomputing.workshop.model.TsscStory;
 import co.edu.icesi.internetcomputing.workshop.model.TsscTopic;
@@ -27,24 +30,25 @@ import co.edu.icesi.internetcomputing.workshop.repositories.TsscGameRepository;
 import co.edu.icesi.internetcomputing.workshop.repositories.TsscStoryRepository;
 import co.edu.icesi.internetcomputing.workshop.repositories.TsscTopicRepository;
 import co.edu.icesi.internetcomputing.workshop.services.TsscGameServiceImp;
+import co.edu.icesi.internetcomputing.workshop.services.TsscStoryServiceImp;
+import co.edu.icesi.internetcomputing.workshop.services.TsscTopicServiceImp;
 
-public class TsscGameServiceTest {
-	
-	@Mock
-	private TsscGameRepository tsscGameRepository;
-	
-	@Mock
-	private TsscTopicRepository tsscTopicRepository;
-	
-	@Mock
-	private TsscStoryRepository tsscStoryRespository;
+@SpringBootTest(classes=SystemManagementActivitiesApplication.class)
+public class TsscGameServiceTest extends AbstractTestNGSpringContextTests {
 	
 	
-	@InjectMocks
+	@Autowired
 	private TsscGameServiceImp tsscGameServiceImp;
 	
+	@Autowired
+	private TsscTopicServiceImp tsscTopicServiceImp;
+	
+	@Autowired
+	private TsscStoryServiceImp tsscStoryServiceImp;
 	
 	private TsscTopic tsscTopic;
+	
+	private TsscStory tssStory;
 	
 	Optional<TsscTopic> tsscTopics;
 	
@@ -55,33 +59,33 @@ public class TsscGameServiceTest {
 	@BeforeClass
 	public void initialize() {
 		List<TsscStory> tsscStories = new ArrayList<>();
-		tsscStories.add(new TsscStory());
+		tssStory = new TsscStory();
+		tssStory.setId(1);
+		tssStory.setDescription("Story 1");
+		tssStory.setInitialSprint(new BigDecimal(5));
+		tssStory.setPriority(new BigDecimal(3));
+		tssStory.setBusinessValue(new BigDecimal(4));
+		
+		tsscStoryServiceImp.save(tssStory);
 		
 		tsscTopic = new TsscTopic();
-		tsscTopic.setId(0);
+		tsscTopic.setId(1);
 		tsscTopic.setName("Topic 1");
 		tsscTopic.setDescription("Topic for Game");
 		tsscTopic.setDefaultGroups(10);
 		tsscTopic.setDefaultSprints(10);
+		tsscTopicServiceImp.save(tsscTopic);
 		tsscTopic.setTsscStories(tsscStories);
 		
-		tsscTopics = Optional.of(tsscTopic);
-	}
-	
-	@BeforeMethod(alwaysRun = true)
-	public void iniMock() {
-		MockitoAnnotations.initMocks(this);
 	}
 	
 	/*
 	 * Save Tests
 	 * */
 	@Test
-	public void testAddGame1() {
-		when(tsscTopicRepository.findById(tsscTopic.getId())).thenReturn(tsscTopics);
-		
+	public void testAddGame1() {	
 		TsscGame tsscGame = new TsscGame();
-		tsscGame.setId(0);
+		tsscGame.setId(1);
 		tsscGame.setName("Game 1");
 		tsscGame.setAdminPassword("123");
 		tsscGame.setGuestPassword("123456");
@@ -89,19 +93,13 @@ public class TsscGameServiceTest {
 		tsscGame.setNSprints(5);
 		tsscGame.setTsscTopic(tsscTopic);
 		
-		tsscGameServiceImp.save(tsscGame);
-		
-		verify(tsscGameRepository).save(tsscGame);
-		verify(tsscTopicRepository).findById(tsscTopic.getId());
-		
-		verifyNoMoreInteractions(tsscGameRepository);
-		verifyNoMoreInteractions(tsscTopicRepository);	
+		assertTrue(tsscGameServiceImp.save(tsscGame));
+		assertNotNull(tsscGameServiceImp.findById(tsscGame.getId()).get());
+		assertEquals(tsscGameServiceImp.findById(tsscGame.getId()).get().getName(), tsscGame.getName());
 	}
 	
-	@Test
-	public void testAddGame2() {
-		when(tsscTopicRepository.findById(tsscTopic.getId())).thenReturn(tsscTopics);
-		
+	@Test(expectedExceptions=NoSuchElementException.class, expectedExceptionsMessageRegExp="No value present")
+	public void testAddGame2() {		
 		TsscGame tsscGame = new TsscGame();
 		tsscGame.setId(0);
 		tsscGame.setName("Game 2");
@@ -112,12 +110,11 @@ public class TsscGameServiceTest {
 		tsscGame.setTsscTopic(tsscTopic);
 		
 		assertFalse(tsscGameServiceImp.save(tsscGame));
-		verifyZeroInteractions(tsscGameRepository);	
+		assertNull(tsscGameServiceImp.findById(tsscGame.getId()).get());
 	}
 	
-	@Test
+	@Test(expectedExceptions=NoSuchElementException.class, expectedExceptionsMessageRegExp="No value present")
 	public void testAddGame3() {
-		when(tsscTopicRepository.findById(tsscTopic.getId())).thenReturn(tsscTopics);
 		
 		TsscGame tsscGame = new TsscGame();
 		tsscGame.setId(0);
@@ -129,18 +126,18 @@ public class TsscGameServiceTest {
 		tsscGame.setTsscTopic(tsscTopic);
 		
 		assertFalse(tsscGameServiceImp.save(tsscGame));
-		verifyZeroInteractions(tsscGameRepository);	
+		assertNull(tsscGameServiceImp.findById(tsscGame.getId()).get());
 	}
 	
-	@Test
+	@Test(expectedExceptions = JpaObjectRetrievalFailureException.class)
 	public void testAddGame4() {
 		TsscTopic tsscTopicNoExist = new TsscTopic();
-		tsscTopicNoExist.setId(10000);
+		tsscTopicNoExist.setId(4);
 		tsscTopicNoExist.setName("Topic 1");
 		tsscTopicNoExist.setDescription("Topic 1");
 		
 		TsscGame tsscGame = new TsscGame();
-		tsscGame.setId(0);
+		tsscGame.setId(1);
 		tsscGame.setName("Game 3");
 		tsscGame.setAdminPassword("123");
 		tsscGame.setGuestPassword("123456");
@@ -148,10 +145,7 @@ public class TsscGameServiceTest {
 		tsscGame.setNSprints(5);
 		tsscGame.setTsscTopic(tsscTopicNoExist);
 		
-		when(tsscTopicRepository.findById(tsscTopicNoExist.getId())).thenReturn(null);
-
 		assertFalse(tsscGameServiceImp.save(tsscGame));
-		verifyZeroInteractions(tsscGameRepository);	
 	}
 	
 	@Test(expectedExceptions = NullPointerException.class, expectedExceptionsMessageRegExp="El Game no puede ser nulo")
@@ -159,13 +153,10 @@ public class TsscGameServiceTest {
 		
 		TsscGame tsscGame = null;
 		tsscGameServiceImp.save(tsscGame);
-		verifyZeroInteractions(tsscTopic);
-
 	}
 	
+	
 	public void testAdd2Game1() {
-		when(tsscTopicRepository.findById(tsscTopic.getId())).thenReturn(tsscTopics);
-		
 		TsscGame tsscGame = new TsscGame();
 		tsscGame.setId(0);
 		tsscGame.setName("Game 1");
@@ -173,22 +164,18 @@ public class TsscGameServiceTest {
 		tsscGame.setGuestPassword("123456");
 		tsscGame.setNGroups(5);
 		tsscGame.setNSprints(5);
+		
 		tsscGame.setTsscTopic(tsscTopic);
 		
 		tsscGameServiceImp.save2(tsscGame);
 		
-		assertEquals(tsscTopic.getTsscStories().get(0), tsscGame.getTsscStories().get(0));
-		verify(tsscGameRepository).save(tsscGame);
-		verify(tsscTopicRepository).findById(tsscTopic.getId());
-		
-		verifyNoMoreInteractions(tsscGameRepository);
-		verifyNoMoreInteractions(tsscTopicRepository);	
+		assertEquals(tsscTopic.getTsscStories().get(0).getDescription(), tsscGame.getTsscStories().get(0).getDescription());
 	}
 	
 	/*
 	 * UPDATE TESTS
 	 * */
-	@BeforeMethod
+	/*@BeforeMethod
 	public void initializeUpdate(){
 		tsscTopic = new TsscTopic();
 		tsscTopic.setId(0);
@@ -250,7 +237,7 @@ public class TsscGameServiceTest {
 		tsscGame.setNSprints(0);
 		
 		assertFalse(tsscGameServiceImp.save(tsscGame));
-	}
+	}*/
 	
 
 }
