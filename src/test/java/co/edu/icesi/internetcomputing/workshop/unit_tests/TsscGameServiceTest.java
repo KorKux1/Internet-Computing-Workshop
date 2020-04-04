@@ -17,6 +17,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,10 +53,20 @@ public class TsscGameServiceTest {
 	
 	private TsscGame tsscGameU;
 	
+	private TsscStory tsscStory;
+	
+	private List<TsscStory> tsscStories;
+	
 	@BeforeClass
 	public void initialize() {
-		List<TsscStory> tsscStories = new ArrayList<>();
-		tsscStories.add(new TsscStory());
+		tsscStories = new ArrayList<>();
+		tsscStory = new TsscStory();
+		tsscStory.setId(1);
+		tsscStory.setBusinessValue(new BigDecimal(4));
+		tsscStory.setInitialSprint(new BigDecimal(4));
+		tsscStory.setPriority(new BigDecimal(4));
+		tsscStory.setDescription("Story");
+		tsscStories.add(tsscStory);
 		
 		tsscTopic = new TsscTopic();
 		tsscTopic.setId(0);
@@ -163,6 +174,7 @@ public class TsscGameServiceTest {
 
 	}
 	
+	@Test
 	public void testAdd2Game1() {
 		when(tsscTopicRepository.findById(tsscTopic.getId())).thenReturn(tsscTopics);
 		
@@ -173,11 +185,12 @@ public class TsscGameServiceTest {
 		tsscGame.setGuestPassword("123456");
 		tsscGame.setNGroups(5);
 		tsscGame.setNSprints(5);
+		tsscTopic.setTsscStories(tsscStories);
 		tsscGame.setTsscTopic(tsscTopic);
-		
+		tsscGame.setTsscStories(new ArrayList<TsscStory>());
 		tsscGameServiceImp.save2(tsscGame);
 		
-		assertEquals(tsscTopic.getTsscStories().get(0), tsscGame.getTsscStories().get(0));
+		assertEquals(tsscTopic.getTsscStories().get(0).getDescription(), tsscGame.getTsscStories().get(0).getDescription());
 		verify(tsscGameRepository).save(tsscGame);
 		verify(tsscTopicRepository).findById(tsscTopic.getId());
 		

@@ -2,13 +2,17 @@ package co.edu.icesi.internetcomputing.workshop.services;
 
 import java.util.Optional;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.icesi.internetcomputing.workshop.model.TsscGame;
 import co.edu.icesi.internetcomputing.workshop.model.TsscStory;
 import co.edu.icesi.internetcomputing.workshop.model.TsscTopic;
 import co.edu.icesi.internetcomputing.workshop.repositories.TsscGameRepository;
+import co.edu.icesi.internetcomputing.workshop.repositories.TsscStoryRepository;
 import co.edu.icesi.internetcomputing.workshop.repositories.TsscTopicRepository;
 
 @Service
@@ -18,11 +22,14 @@ public class TsscGameServiceImp implements TsscGameService {
 	
 	private TsscTopicRepository tsscTopicRepository;
 	
+	private TsscStoryRepository tsscStoryRepository;
+	
 	
 	@Autowired
-	public TsscGameServiceImp(TsscGameRepository tsscGameRepository,TsscTopicRepository tsscTopicRepository) {
+	public TsscGameServiceImp(TsscGameRepository tsscGameRepository,TsscTopicRepository tsscTopicRepository, TsscStoryRepository tsscStoryRepository) {
 		this.tsscGameRepository = tsscGameRepository;
 		this.tsscTopicRepository = tsscTopicRepository;
+		this.tsscStoryRepository = tsscStoryRepository;
 	}
 	
 	@Override
@@ -49,6 +56,7 @@ public class TsscGameServiceImp implements TsscGameService {
 	}
 
 	@Override
+	@Transactional
 	public boolean save2(TsscGame tsscGame) {
 		if(tsscGame == null) {
 			throw new NullPointerException("El Game no puede ser nulo");
@@ -61,9 +69,12 @@ public class TsscGameServiceImp implements TsscGameService {
 			if (aux == null) {
 				return false;
 			}else {
-				TsscTopic tsscTopic = aux.get();
+				TsscTopic tsscTopic = tsscGame.getTsscTopic(); //aux.get();
 				for(TsscStory tsscStory: tsscTopic.getTsscStories()) {
-					tsscGame.addTsscStory(tsscStory);
+					TsscStory target = new TsscStory();
+					BeanUtils.copyProperties(tsscStory, target);
+					tsscStoryRepository.save(target);
+					tsscGame.addTsscStory(target);
 				}
 			}
 		}

@@ -9,17 +9,14 @@ import static org.testng.Assert.assertNotNull;
 import static org.testng.Assert.assertNull;
 
 import java.util.NoSuchElementException;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import co.edu.icesi.internetcomputing.workshop.SystemManagementActivitiesApplication;
 import co.edu.icesi.internetcomputing.workshop.model.TsscTopic;
-import co.edu.icesi.internetcomputing.workshop.repositories.TsscTopicRepository;
 import co.edu.icesi.internetcomputing.workshop.services.TsscTopicServiceImp;
 
 @SpringBootTest(classes=SystemManagementActivitiesApplication.class)
@@ -27,11 +24,6 @@ public class TsscTopicServiceTest extends AbstractTestNGSpringContextTests  {
 	
 	@Autowired
 	private TsscTopicServiceImp tsscTopicServiceImp;
-	
-	/*@Autowired
-	public TsscTopicServiceTest(TsscTopicServiceImp tsscTopicServiceImp) {
-		this.tsscTopicServiceImp = tsscTopicServiceImp;
-	}*/
 	
 	/* 
 	 * SAVE TESTS
@@ -52,9 +44,8 @@ public class TsscTopicServiceTest extends AbstractTestNGSpringContextTests  {
 		assertEquals(tsscTopicServiceImp.findById(1).getName(), tsscTopic.getName());
 	}
 
-	@Test(expectedExceptions=NoSuchElementException.class, expectedExceptionsMessageRegExp="No value present",testName = "Add a topic, groups not greater than zero", description = "Added a topic where groups are not greater than zero")
+	@Test(expectedExceptions = NoSuchElementException.class,testName = "Add a topic, groups not greater than zero", description = "Added a topic where groups are not greater than zero")
 	public void testAddTopic2() {
-
 		TsscTopic tsscTopic = new TsscTopic();
 		tsscTopic.setId(2);
 		tsscTopic.setDescription("Description");
@@ -64,23 +55,22 @@ public class TsscTopicServiceTest extends AbstractTestNGSpringContextTests  {
 		tsscTopic.setDefaultGroups(0);
 		tsscTopic.setDefaultSprints(3);
 		assertFalse(tsscTopicServiceImp.save(tsscTopic));
-		assertNotNull(tsscTopicServiceImp.findById(1));
+		assertNull(tsscTopicServiceImp.findById(tsscTopic.getId()));
 		
 	}
 	
-	@Test(expectedExceptions=NoSuchElementException.class,expectedExceptionsMessageRegExp="No value present", testName = "Add a topic, Sprints not greater than zero", description = "Added a topic where sprints are not greater than zero")
+	@Test(expectedExceptions=NoSuchElementException.class, testName = "Add a topic, Sprints not greater than zero", description = "Added a topic where sprints are not greater than zero")
 	public void testAddTopic3() {
 		TsscTopic tsscTopic = new TsscTopic();
-		tsscTopic.setId(1);
+		tsscTopic.setId(3);
 		tsscTopic.setDescription("Description");
 		tsscTopic.setTsscStories(null);
-		tsscTopic.setName("Topic 3");
+		tsscTopic.setName("Topic 2");
 		tsscTopic.setGroupPrefix("G1");
 		tsscTopic.setDefaultGroups(3);
 		tsscTopic.setDefaultSprints(0);
-		
 		assertFalse(tsscTopicServiceImp.save(tsscTopic));
-		assertNotNull(tsscTopicServiceImp.findById(1));
+		assertNull(tsscTopicServiceImp.findById(tsscTopic.getId()));
 
 	}
 	

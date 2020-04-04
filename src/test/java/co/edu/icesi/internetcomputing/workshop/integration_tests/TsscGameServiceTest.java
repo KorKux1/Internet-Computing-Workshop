@@ -3,6 +3,7 @@ package co.edu.icesi.internetcomputing.workshop.integration_tests;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertNotEquals;
 import static org.testng.Assert.assertNotNull;
 import static org.testng.Assert.assertNull;
 import static org.testng.Assert.assertTrue;
@@ -14,7 +15,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.orm.jpa.JpaObjectRetrievalFailureException;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+import org.springframework.transaction.annotation.Transactional;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.math.BigDecimal;
@@ -26,9 +29,6 @@ import co.edu.icesi.internetcomputing.workshop.SystemManagementActivitiesApplica
 import co.edu.icesi.internetcomputing.workshop.model.TsscGame;
 import co.edu.icesi.internetcomputing.workshop.model.TsscStory;
 import co.edu.icesi.internetcomputing.workshop.model.TsscTopic;
-import co.edu.icesi.internetcomputing.workshop.repositories.TsscGameRepository;
-import co.edu.icesi.internetcomputing.workshop.repositories.TsscStoryRepository;
-import co.edu.icesi.internetcomputing.workshop.repositories.TsscTopicRepository;
 import co.edu.icesi.internetcomputing.workshop.services.TsscGameServiceImp;
 import co.edu.icesi.internetcomputing.workshop.services.TsscStoryServiceImp;
 import co.edu.icesi.internetcomputing.workshop.services.TsscTopicServiceImp;
@@ -60,7 +60,7 @@ public class TsscGameServiceTest extends AbstractTestNGSpringContextTests {
 	public void initialize() {
 		List<TsscStory> tsscStories = new ArrayList<>();
 		tssStory = new TsscStory();
-		tssStory.setId(1);
+		tssStory.setId(0);
 		tssStory.setDescription("Story 1");
 		tssStory.setInitialSprint(new BigDecimal(5));
 		tssStory.setPriority(new BigDecimal(3));
@@ -69,13 +69,15 @@ public class TsscGameServiceTest extends AbstractTestNGSpringContextTests {
 		tsscStoryServiceImp.save(tssStory);
 		
 		tsscTopic = new TsscTopic();
-		tsscTopic.setId(1);
+		tsscTopic.setId(0);
 		tsscTopic.setName("Topic 1");
 		tsscTopic.setDescription("Topic for Game");
 		tsscTopic.setDefaultGroups(10);
 		tsscTopic.setDefaultSprints(10);
-		tsscTopicServiceImp.save(tsscTopic);
+		tsscStories.add(tssStory);
 		tsscTopic.setTsscStories(tsscStories);
+
+		tsscTopicServiceImp.save(tsscTopic);
 		
 	}
 	
@@ -149,13 +151,14 @@ public class TsscGameServiceTest extends AbstractTestNGSpringContextTests {
 	}
 	
 	@Test(expectedExceptions = NullPointerException.class, expectedExceptionsMessageRegExp="El Game no puede ser nulo")
-	public void testAddTopicNull() {
+	public void testAddGameull() {
 		
 		TsscGame tsscGame = null;
 		tsscGameServiceImp.save(tsscGame);
 	}
 	
-	
+	@Test
+	@Transactional
 	public void testAdd2Game1() {
 		TsscGame tsscGame = new TsscGame();
 		tsscGame.setId(0);
@@ -164,80 +167,129 @@ public class TsscGameServiceTest extends AbstractTestNGSpringContextTests {
 		tsscGame.setGuestPassword("123456");
 		tsscGame.setNGroups(5);
 		tsscGame.setNSprints(5);
+		tsscGame.setTsscStories(new ArrayList<TsscStory>());
 		
 		tsscGame.setTsscTopic(tsscTopic);
 		
-		tsscGameServiceImp.save2(tsscGame);
-		
-		assertEquals(tsscTopic.getTsscStories().get(0).getDescription(), tsscGame.getTsscStories().get(0).getDescription());
+		assertTrue(tsscGameServiceImp.save2(tsscGame));
+		TsscGame  game = tsscGameServiceImp.findById(tsscGame.getId()).get();
+		assertEquals(game.getTsscStories().get(0).getDescription(), tsscGame.getTsscTopic().getTsscStories().get(0).getDescription());
 	}
 	
 	/*
 	 * UPDATE TESTS
 	 * */
-	/*@BeforeMethod
-	public void initializeUpdate(){
+	
+	@Test(groups="Update")
+	public void testUpdateGame1() {	
 		tsscTopic = new TsscTopic();
-		tsscTopic.setId(0);
+		tsscTopic.setId(1);
 		tsscTopic.setName("Topic 1");
 		tsscTopic.setDescription("Topic for Game");
 		tsscTopic.setDefaultGroups(10);
 		tsscTopic.setDefaultSprints(10);
-		tsscTopics = Optional.of(tsscTopic);
-		
+		tsscTopicServiceImp.save(tsscTopic);
+			
 		tsscGameU = new TsscGame();
 		tsscGameU.setId(1);
 		tsscGameU.setName("Game 1");
 		tsscGameU.setNGroups(5);
 		tsscGameU.setNSprints(5);
 		tsscGameU.setTsscTopic(tsscTopic);
-		tsscGamesU = Optional.of(tsscGameU);
-	}
-	
-	@Test(groups="Update")
-	public void testUpdateGame1() {		
-		when(tsscGameRepository.findById(tsscGameU.getId())).thenReturn(tsscGamesU);
-		when(tsscTopicRepository.findById(tsscTopic.getId())).thenReturn(tsscTopics);
-
+		tsscGameServiceImp.save(tsscGameU);
 		
-		Optional<TsscGame> tsscGames = tsscGameRepository.findById(tsscGameU.getId());
+		Optional<TsscGame> tsscGames = tsscGameServiceImp.findById(tsscGameU.getId());
 		TsscGame tsscGame = tsscGames.get();
 		tsscGame.setName("Game Updated");
 		
 		assertTrue(tsscGameServiceImp.save(tsscGame));
-	
-		
-		verify(tsscGameRepository).save(tsscGame);
-		verify(tsscTopicRepository).findById(tsscTopic.getId());
-
-		verifyNoMoreInteractions(tsscTopicRepository);
+		assertEquals(tsscGameServiceImp.findById(tsscGame.getId()).get().getName(), tsscGame.getName());
 	}
 	
-	
 	@Test(groups="Update")
-	public void testUpdateGame2() {		
-		when(tsscGameRepository.findById(tsscGameU.getId())).thenReturn(tsscGamesU);
-		when(tsscTopicRepository.findById(tsscTopic.getId())).thenReturn(tsscTopics);
-
+	public void testUpdateGame2() {	
+		tsscTopic = new TsscTopic();
+		tsscTopic.setId(1);
+		tsscTopic.setName("Topic 1");
+		tsscTopic.setDescription("Topic for Game");
+		tsscTopic.setDefaultGroups(10);
+		tsscTopic.setDefaultSprints(10);
+		tsscTopicServiceImp.save(tsscTopic);
+			
+		tsscGameU = new TsscGame();
+		tsscGameU.setId(1);
+		tsscGameU.setName("Game 1");
+		tsscGameU.setNGroups(5);
+		tsscGameU.setNSprints(5);
+		tsscGameU.setTsscTopic(tsscTopic);
+		tsscGameServiceImp.save(tsscGameU);
 		
-		Optional<TsscGame> tsscGames = tsscGameRepository.findById(tsscGameU.getId());
+		Optional<TsscGame> tsscGames = tsscGameServiceImp.findById(tsscGameU.getId());
 		TsscGame tsscGame = tsscGames.get();
+		tsscGame.setName("Game Updated");
 		tsscGame.setNGroups(0);
 		
-		assertFalse(tsscGameServiceImp.save(tsscGame));	
+		assertFalse(tsscGameServiceImp.save(tsscGame));
+		assertNotEquals(tsscGameServiceImp.findById(tsscGame.getId()).get().getNGroups()
+				, tsscGame.getNGroups());
 	}
 	
 	@Test(groups="Update")
 	public void testUpdateGame3() {		
-		when(tsscGameRepository.findById(tsscGameU.getId())).thenReturn(tsscGamesU);
-		when(tsscTopicRepository.findById(tsscTopic.getId())).thenReturn(tsscTopics);
-
-		Optional<TsscGame> tsscGames = tsscGameRepository.findById(tsscGameU.getId());
+		tsscTopic = new TsscTopic();
+		tsscTopic.setId(1);
+		tsscTopic.setName("Topic 1");
+		tsscTopic.setDescription("Topic for Game");
+		tsscTopic.setDefaultGroups(10);
+		tsscTopic.setDefaultSprints(10);
+		tsscTopicServiceImp.save(tsscTopic);
+			
+		tsscGameU = new TsscGame();
+		tsscGameU.setId(1);
+		tsscGameU.setName("Game 1");
+		tsscGameU.setNGroups(5);
+		tsscGameU.setNSprints(5);
+		tsscGameU.setTsscTopic(tsscTopic);
+		tsscGameServiceImp.save(tsscGameU);
+		
+		Optional<TsscGame> tsscGames = tsscGameServiceImp.findById(tsscGameU.getId());
 		TsscGame tsscGame = tsscGames.get();
+		tsscGame.setName("Game Updated");
 		tsscGame.setNSprints(0);
 		
 		assertFalse(tsscGameServiceImp.save(tsscGame));
-	}*/
+		assertNotEquals(tsscGameServiceImp.findById(tsscGame.getId()).get().getNSprints()
+				, tsscGame.getNSprints());
+	}
 	
+	@Test(groups="Update", expectedExceptions=JpaObjectRetrievalFailureException.class)
+	public void testUpdateGame4() {		
+		tsscTopic = new TsscTopic();
+		tsscTopic.setId(1);
+		tsscTopic.setName("Topic 1");
+		tsscTopic.setDescription("Topic for Game");
+		tsscTopic.setDefaultGroups(10);
+		tsscTopic.setDefaultSprints(10);
+		tsscTopicServiceImp.save(tsscTopic);
+			
+		tsscGameU = new TsscGame();
+		tsscGameU.setId(1);
+		tsscGameU.setName("Game 1");
+		tsscGameU.setNGroups(5);
+		tsscGameU.setNSprints(5);
+		tsscGameU.setTsscTopic(tsscTopic);
+		tsscGameServiceImp.save(tsscGameU);
+		
+		Optional<TsscGame> tsscGames = tsscGameServiceImp.findById(tsscGameU.getId());
+		TsscGame tsscGame = tsscGames.get();
+		tsscGame.setName("Game Updated");
+		TsscTopic tsscTopicU = new TsscTopic();
+		tsscTopicU.setId(6);
+		tsscGame.setTsscTopic(tsscTopicU);
+		
+		assertFalse(tsscGameServiceImp.save(tsscGame));
+		assertNotEquals(tsscGameServiceImp.findById(tsscGame.getId()).get().getTsscTopic().getId()
+				, tsscTopicU.getId());
+	}
 
 }

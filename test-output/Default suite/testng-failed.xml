@@ -5,8 +5,14 @@
     <classes>
       <class name="co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest">
         <methods>
-          <include name="testAddStory1"/>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="initUpdates"/>
           <include name="initialize"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+          <include name="testUpdateStory4"/>
         </methods>
       </class> <!-- co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest -->
     </classes>

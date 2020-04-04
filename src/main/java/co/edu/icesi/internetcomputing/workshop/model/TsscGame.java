@@ -5,6 +5,7 @@ import javax.persistence.*;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
+import org.springframework.data.repository.cdi.Eager;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.math.BigDecimal;
@@ -81,7 +82,7 @@ public class TsscGame implements Serializable {
 	private List<TsscSprint> tsscSprints;
 
 	// bi-directional many-to-one association to TsscStory
-	@OneToMany(mappedBy = "tsscGame")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "tsscGame")
 	@JsonIgnore
 	private List<TsscStory> tsscStories;
 	

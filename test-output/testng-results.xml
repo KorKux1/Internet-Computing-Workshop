@@ -1,55 +1,384 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="25" passed="25">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="13862" started-at="2020-03-31T00:11:19 COT" finished-at="2020-03-31T00:11:33 COT">
+  <suite name="Default suite" duration-ms="841" started-at="2020-04-03T23:47:48 COT" finished-at="2020-04-03T23:47:49 COT">
     <groups>
+      <group name="Update">
+        <method signature="TsscGameServiceTest.testUpdateGame1()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="testUpdateGame1" class="co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest"/>
+        <method signature="TsscGameServiceTest.testUpdateGame2()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="testUpdateGame2" class="co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest"/>
+        <method signature="TsscGameServiceTest.testUpdateGame3()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="testUpdateGame3" class="co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest"/>
+        <method signature="TsscStoryServiceTest.testUpdateStory1()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="testUpdateStory1" class="co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest"/>
+        <method signature="TsscTopicServiceTest.testUpdateTopic1()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@fad74ee]" name="testUpdateTopic1" class="co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest"/>
+        <method signature="TsscTopicServiceTest.testUpdateTopic2()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@fad74ee]" name="testUpdateTopic2" class="co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest"/>
+        <method signature="TsscTopicServiceTest.testUpdateTopic3()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@fad74ee]" name="testUpdateTopic3" class="co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest"/>
+      </group> <!-- Update -->
     </groups>
-    <test name="Default test" duration-ms="13862" started-at="2020-03-31T00:11:19 COT" finished-at="2020-03-31T00:11:33 COT">
-      <class name="co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest">
-        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest@3246fb96]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="38" started-at="2020-03-31T00:11:19 COT" finished-at="2020-03-31T00:11:19 COT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- springTestContextBeforeTestClass -->
-        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest@3246fb96]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="12496" started-at="2020-03-31T00:11:19 COT" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2020-03-31T00:11:32 COT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- springTestContextPrepareTestInstance -->
-        <test-method status="PASS" signature="initialize()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest@3246fb96]" name="initialize" is-config="true" duration-ms="1158" started-at="2020-03-31T00:11:32 COT" finished-at="2020-03-31T00:11:33 COT">
+    <test name="Default test" duration-ms="841" started-at="2020-04-03T23:47:48 COT" finished-at="2020-04-03T23:47:49 COT">
+      <class name="co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="initialize" is-config="true" duration-ms="13" started-at="2020-04-03T23:47:48 COT" finished-at="2020-04-03T23:47:48 COT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest@3246fb96]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="5" started-at="2020-03-31T00:11:33 COT" finished-at="2020-03-31T00:11:33 COT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest.testAddStory1()]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="iniMock" is-config="true" duration-ms="313" started-at="2020-04-03T23:47:48 COT" finished-at="2020-04-03T23:47:49 COT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- springTestContextBeforeTestMethod -->
-        <test-method status="PASS" signature="testAddStory1()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest@3246fb96]" name="testAddStory1" duration-ms="85" started-at="2020-03-31T00:11:33 COT" finished-at="2020-03-31T00:11:33 COT">
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="initializeUpdate()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="initializeUpdate" is-config="true" duration-ms="3" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeUpdate -->
+        <test-method status="PASS" signature="testAddGame2()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="testAddGame2" duration-ms="36" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddGame2 -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="iniMock" is-config="true" duration-ms="6" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="initializeUpdate()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="initializeUpdate" is-config="true" duration-ms="0" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeUpdate -->
+        <test-method status="PASS" signature="testAddGame3()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="testAddGame3" duration-ms="2" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddGame3 -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="iniMock" is-config="true" duration-ms="2" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="initializeUpdate()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="initializeUpdate" is-config="true" duration-ms="0" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeUpdate -->
+        <test-method status="PASS" signature="testAddGame4()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="testAddGame4" duration-ms="2" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddGame4 -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="iniMock" is-config="true" duration-ms="1" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="testAddGame5()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="testAddGame5" duration-ms="3" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddGame5 -->
+        <test-method status="PASS" signature="initializeUpdate()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="initializeUpdate" is-config="true" duration-ms="0" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeUpdate -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="iniMock" is-config="true" duration-ms="1" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="initializeUpdate()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="initializeUpdate" is-config="true" duration-ms="0" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeUpdate -->
+        <test-method status="PASS" signature="testAddStory1()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="testAddStory1" duration-ms="14" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddStory1 -->
-        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest@3246fb96]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="6" started-at="2020-03-31T00:11:33 COT" finished-at="2020-03-31T00:11:33 COT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest.testAddStory1()]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="iniMock" is-config="true" duration-ms="1" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- springTestContextAfterTestMethod -->
-        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest@3246fb96]" name="springTestContextAfterTestClass" is-config="true" duration-ms="3" started-at="2020-03-31T00:11:33 COT" finished-at="2020-03-31T00:11:33 COT">
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="initializeUpdate()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="initializeUpdate" is-config="true" duration-ms="0" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- springTestContextAfterTestClass -->
-      </class> <!-- co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest -->
+        </test-method> <!-- initializeUpdate -->
+        <test-method status="PASS" signature="testUpdateStory1()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="testUpdateStory1" duration-ms="2" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateStory1 -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="iniMock" is-config="true" duration-ms="1" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="initializeUpdate()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="initializeUpdate" is-config="true" duration-ms="1" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeUpdate -->
+        <test-method status="PASS" signature="testUpdateStory2()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="testUpdateStory2" duration-ms="2" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateStory2 -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="iniMock" is-config="true" duration-ms="2" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="testUpdateStory3()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="testUpdateStory3" duration-ms="3" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateStory3 -->
+        <test-method status="PASS" signature="initializeUpdate()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="initializeUpdate" is-config="true" duration-ms="0" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeUpdate -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="iniMock" is-config="true" duration-ms="2" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="initializeUpdate()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="initializeUpdate" is-config="true" duration-ms="0" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeUpdate -->
+        <test-method status="PASS" signature="testUpdateStory4()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20]" name="testUpdateStory4" duration-ms="2" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateStory4 -->
+      </class> <!-- co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest -->
+      <class name="co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="initialize" is-config="true" duration-ms="3" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="iniMock" is-config="true" duration-ms="12" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="testAdd2Game1()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="testAdd2Game1" duration-ms="230" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAdd2Game1 -->
+        <test-method status="PASS" signature="initializeUpdate()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="initializeUpdate" is-config="true" duration-ms="0" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeUpdate -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="iniMock" is-config="true" duration-ms="1" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="testAddGame1()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="testAddGame1" duration-ms="2" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddGame1 -->
+        <test-method status="PASS" signature="initializeUpdate()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="initializeUpdate" is-config="true" duration-ms="0" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeUpdate -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="iniMock" is-config="true" duration-ms="0" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="testAddGame2()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="testAddGame2" duration-ms="1" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddGame2 -->
+        <test-method status="PASS" signature="initializeUpdate()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="initializeUpdate" is-config="true" duration-ms="0" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeUpdate -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="iniMock" is-config="true" duration-ms="1" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="initializeUpdate()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="initializeUpdate" is-config="true" duration-ms="0" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeUpdate -->
+        <test-method status="PASS" signature="testAddGame3()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="testAddGame3" duration-ms="2" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddGame3 -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="iniMock" is-config="true" duration-ms="1" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="initializeUpdate()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="initializeUpdate" is-config="true" duration-ms="0" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeUpdate -->
+        <test-method status="PASS" signature="testAddGame4()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="testAddGame4" duration-ms="1" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddGame4 -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="iniMock" is-config="true" duration-ms="1" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="initializeUpdate()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="initializeUpdate" is-config="true" duration-ms="1" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeUpdate -->
+        <test-method status="PASS" signature="testAddTopicNull()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="testAddTopicNull" duration-ms="1" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[El Game no puede ser nulo]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: El Game no puede ser nulo
+at co.edu.icesi.internetcomputing.workshop.services.TsscGameServiceImp.save(TsscGameServiceImp.java:38)
+at co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest.testAddTopicNull(TsscGameServiceTest.java:172)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddTopicNull -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="iniMock" is-config="true" duration-ms="1" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="initializeUpdate()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="initializeUpdate" is-config="true" duration-ms="2" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeUpdate -->
+        <test-method status="PASS" signature="testUpdateGame1()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="testUpdateGame1" duration-ms="2" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateGame1 -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="iniMock" is-config="true" duration-ms="1" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="initializeUpdate()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="initializeUpdate" is-config="true" duration-ms="0" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeUpdate -->
+        <test-method status="PASS" signature="testUpdateGame2()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="testUpdateGame2" duration-ms="2" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateGame2 -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="iniMock" is-config="true" duration-ms="1" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="initializeUpdate()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="initializeUpdate" is-config="true" duration-ms="0" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeUpdate -->
+        <test-method status="PASS" signature="testUpdateGame3()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0]" name="testUpdateGame3" duration-ms="2" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateGame3 -->
+      </class> <!-- co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest -->
+      <class name="co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest">
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@fad74ee]" name="iniMock" is-config="true" duration-ms="2" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="testAddTopic1()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@fad74ee]" name="testAddTopic1" duration-ms="5" started-at="2020-04-03T23:47:49 COT" description="Add a topic without errors" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddTopic1 -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@fad74ee]" name="iniMock" is-config="true" duration-ms="1" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="testAddTopic2()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@fad74ee]" name="testAddTopic2" duration-ms="2" started-at="2020-04-03T23:47:49 COT" description="Added a topic where groups are not greater than zero" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddTopic2 -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@fad74ee]" name="iniMock" is-config="true" duration-ms="1" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="testAddTopic3()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@fad74ee]" name="testAddTopic3" duration-ms="1" started-at="2020-04-03T23:47:49 COT" description="Added a topic where sprints are not greater than zero" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddTopic3 -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@fad74ee]" name="iniMock" is-config="true" duration-ms="1" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="testAddTopicNull()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@fad74ee]" name="testAddTopicNull" duration-ms="2" started-at="2020-04-03T23:47:49 COT" description="Attempt to add null topic" finished-at="2020-04-03T23:47:49 COT">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[El topic no puede ser Nulo]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: El topic no puede ser Nulo
+at co.edu.icesi.internetcomputing.workshop.services.TsscTopicServiceImp.save(TsscTopicServiceImp.java:24)
+at co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest.testAddTopicNull(TsscTopicServiceTest.java:87)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddTopicNull -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@fad74ee]" name="iniMock" is-config="true" duration-ms="1" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="testUpdateTopic1()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@fad74ee]" name="testUpdateTopic1" duration-ms="6" started-at="2020-04-03T23:47:49 COT" description="Update the topic without errors" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateTopic1 -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@fad74ee]" name="iniMock" is-config="true" duration-ms="1" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="testUpdateTopic2()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@fad74ee]" name="testUpdateTopic2" duration-ms="2" started-at="2020-04-03T23:47:49 COT" description="Update a topic where groups are not greater than zero" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateTopic2 -->
+        <test-method status="PASS" signature="iniMock()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@fad74ee]" name="iniMock" is-config="true" duration-ms="1" started-at="2020-04-03T23:47:49 COT" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- iniMock -->
+        <test-method status="PASS" signature="testUpdateTopic3()[pri:0, instance:co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@fad74ee]" name="testUpdateTopic3" duration-ms="1" started-at="2020-04-03T23:47:49 COT" description="Update a topic where sprints are not greater than zero" finished-at="2020-04-03T23:47:49 COT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateTopic3 -->
+      </class> <!-- co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
