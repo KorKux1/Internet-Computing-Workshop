@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -16,22 +18,29 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @NamedQuery(name = "TsscTopic.findAll", query = "SELECT t FROM TsscTopic t")
 public class TsscTopic implements Serializable {
 	private static final long serialVersionUID = 1L;
+	
+	public interface TopicValidator {};
 
 	@Id
 	@SequenceGenerator(name = "TSSC_TOPIC_ID_GENERATOR", allocationSize = 1, sequenceName = "TSSC_TOPIC_SEQ")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TSSC_TOPIC_ID_GENERATOR")
 	private long id;
-
+	
+	@NotBlank(groups = TopicValidator.class)
 	private String description;
-
+	
+	@NotBlank(groups = TopicValidator.class)
 	private String name;
-
+	
+	@Min(groups = TopicValidator.class, value = 1)
 	@Column(name = "DEFAULT_SPRINTS")
 	private long defaultSprints;
 
+	@Min(groups = TopicValidator.class, value = 1)
 	@Column(name = "DEFAULT_GROUPS")
 	private long defaultGroups;
 
+	@NotBlank(groups = TopicValidator.class)
 	@Column(name = "GROUP_PREFIX")
 	private String groupPrefix;
 

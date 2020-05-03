@@ -2,12 +2,18 @@ package co.edu.icesi.internetcomputing.workshop.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
-import org.springframework.data.repository.cdi.Eager;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -22,6 +28,7 @@ import java.util.List;
 @NamedQuery(name = "TsscGame.findAll", query = "SELECT t FROM TsscGame t")
 public class TsscGame implements Serializable {
 	private static final long serialVersionUID = 1L;
+	public interface GameValidator {};
 
 	@Id
 	@SequenceGenerator(name = "TSSC_GAME_ID_GENERATOR", allocationSize = 1, sequenceName = "TSSC_GAME_SEQ")
@@ -29,26 +36,35 @@ public class TsscGame implements Serializable {
 	private long id;
 
 	@Column(name = "ADMIN_PASSWORD")
+	@NotBlank(groups = GameValidator.class)
 	private String adminPassword;
 
 	@Column(name = "GUEST_PASSWORD")
+	@NotBlank(groups = GameValidator.class)
 	private String guestPassword;
 
 	@Column(name = "N_GROUPS")
+	@Min(groups = GameValidator.class, value = 1)
 	private Integer nGroups = 4;
 
 	@Column(name = "N_SPRINTS")
+	@Min(groups = GameValidator.class, value = 1)
 	private Integer nSprints = 4;
-
+	
+	@NotBlank(groups = GameValidator.class)
 	private String name;
 
 	@Column(name = "PAUSE_SECONDS")
 	private Long pauseSeconds = 0L;
 
 	@Column(name = "SCHEDULED_DATE")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@NotNull(groups = GameValidator.class)
 	private LocalDate scheduledDate;
 
 	@Column(name = "SCHEDULED_TIME")
+	@DateTimeFormat(iso = ISO.TIME)
+	@NotNull(groups = GameValidator.class)
 	private LocalTime scheduledTime;
 
 	@Column(name = "START_TIME")
@@ -58,6 +74,7 @@ public class TsscGame implements Serializable {
 	private BigDecimal typegameId;
 
 	@Column(name = "USER_PASSWORD")
+	@NotBlank(groups = GameValidator.class)
 	private String userPassword;
 
 	// bi-directional many-to-one association to TsscState

@@ -50,4 +50,9 @@ public class TsscStoryServiceImp implements TsscStoryService {
 		return tsscStoryRepository.findById(id).get();
 	}
 
+	@Override
+	public Iterable<TsscStory> findAll() {
+		return tsscStoryRepository.findAll();
+	}
+
 }

@@ -2,6 +2,8 @@ package co.edu.icesi.internetcomputing.workshop.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+
 import java.util.List;
 
 /**
@@ -18,14 +20,17 @@ public class TsscAdmin implements Serializable {
 	@SequenceGenerator(name = "TSSC_ADMIN_ID_GENERATOR", allocationSize = 1, sequenceName = "TSSC_ADMIN_SEQ")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TSSC_ADMIN_ID_GENERATOR")
 	private long id;
-
+	
+	@NotBlank
 	private String password;
 
 	@Column(name = "SUPER_ADMIN")
+	@NotBlank
 	private String superAdmin;
 
 	@Column(name = "AD_USER")
-	private String user;
+	@NotBlank
+	private String username;
 
 	// bi-directional many-to-one association to TsscState
 	@ManyToOne
@@ -63,12 +68,12 @@ public class TsscAdmin implements Serializable {
 		this.superAdmin = superAdmin;
 	}
 
-	public String getUser() {
-		return this.user;
+	public String getUsername() {
+		return this.username;
 	}
 
-	public void setUser(String user) {
-		this.user = user;
+	public void setUsername(String user) {
+		this.username = user;
 	}
 
 	public TsscState getTsscState() {

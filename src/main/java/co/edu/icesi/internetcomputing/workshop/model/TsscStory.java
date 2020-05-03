@@ -2,6 +2,7 @@ package co.edu.icesi.internetcomputing.workshop.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -15,6 +16,8 @@ import java.util.List;
 @NamedQuery(name = "TsscStory.findAll", query = "SELECT t FROM TsscStory t")
 public class TsscStory implements Serializable {
 	private static final long serialVersionUID = 1L;
+	
+	public interface StoryValidator {};
 
 	@Id
 	@SequenceGenerator(name = "TSSC_STORY_ID_GENERATOR", allocationSize = 1, sequenceName = "TSSC_STORY_SEQ")
@@ -54,6 +57,7 @@ public class TsscStory implements Serializable {
 	// bi-directional many-to-one association to TsscGame
 	@ManyToOne
 	@JoinColumn(name = "TSSC_GAME_ID")
+	@NotNull(groups= StoryValidator.class)
 	private TsscGame tsscGame;
 	
 	//bi-directional many-to-one association to TsscTopic

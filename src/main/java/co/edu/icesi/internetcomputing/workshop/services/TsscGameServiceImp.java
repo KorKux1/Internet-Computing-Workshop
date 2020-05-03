@@ -81,5 +81,10 @@ public class TsscGameServiceImp implements TsscGameService {
 		tsscGameRepository.save(tsscGame);
 		return true;
 	}
+
+	@Override
+	public Iterable<TsscGame> findAll() {
+		return tsscGameRepository.findAll();
+	}
 	
 }
