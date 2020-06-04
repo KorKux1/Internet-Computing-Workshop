@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import co.edu.icesi.internetcomputing.workshop.model.TsscStory;
 import co.edu.icesi.internetcomputing.workshop.model.TsscStory.StoryValidator;
+import co.edu.icesi.internetcomputing.workshop.model.TsscTimecontrol;
 import co.edu.icesi.internetcomputing.workshop.services.TsscGameServiceImp;
 import co.edu.icesi.internetcomputing.workshop.services.TsscStoryServiceImp;
 
@@ -93,9 +94,19 @@ public class TsscStoryController {
 		if (bindingResult.hasErrors()) {
 			return "stories/edit";
 		}
-		
-		tsscStoryServiceImp.save(tsscStory);
+		try {
+			tsscStoryServiceImp.editStory(tsscStory, tsscStory.getId());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 			
+		return "redirect:/stories/";
+	}
+	
+	@GetMapping("/story/delete/{id}")
+	public String deleteStory(@PathVariable("id") long id) {
+		tsscStoryServiceImp.delete(tsscStoryServiceImp.findById(id));
 		return "redirect:/stories/";
 	}
 

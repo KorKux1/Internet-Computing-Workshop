@@ -31,7 +31,8 @@
 								<th>Inicio Real</th>
 								<th>Editar</th>
 								<th>Historias</th>
-								<th>Tema</th>					l
+								<th>Tema</th>
+								<th>Cronogramas</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -48,6 +49,9 @@
 									class="btn btn-primary"><i class="fas fa-sticky-note"></i></a></td>
 								<td><a th:href="@{/topics/edit/{id}(id=${game.id})}"
 									class="btn btn-primary"><i class="fas fa-drum-steelpan"></i></a></td>
+								<td><a th:href="@{/game/timecontrol/{id}(id=${game.id})}"
+									class="btn btn-primary"><i class="fas fa-archway"></i></a></td>
+
 							</tr>
 						</tbody>
 					</table>

@@ -44,7 +44,16 @@ public class TsscStoryServiceImp implements TsscStoryService {
 		tsscStoryDao.save(tsscStory);
 		return true;
 	}
-
+	
+	public boolean editStory(TsscStory story, Long id) throws Exception {
+		if (story != null && story.getBusinessValue().compareTo(new BigDecimal(0)) == 1 && story.getInitialSprint().compareTo(new BigDecimal(0)) == 1 && story.getPriority().compareTo(new BigDecimal(0)) == 1) {
+			tsscStoryDao.update(story);
+			return true;
+		} else {
+			throw new Exception();
+		}
+	}
+	
 	@Override
 	public TsscStory findById(long id) {
 		return tsscStoryDao.findById(id);
@@ -53,6 +62,10 @@ public class TsscStoryServiceImp implements TsscStoryService {
 	@Override
 	public Iterable<TsscStory> findAll() {
 		return tsscStoryDao.findAll();
+	}
+	
+	public void delete(TsscStory story) {
+		tsscStoryDao.delete(story);
 	}
 
 }

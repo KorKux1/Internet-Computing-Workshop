@@ -1,5 +1,7 @@
 package co.edu.icesi.internetcomputing.workshop.services;
 
-public interface TsscTimeControlService {
+import co.edu.icesi.internetcomputing.workshop.model.TsscTimecontrol;
 
+public interface TsscTimeControlService {
+	public TsscTimecontrol findById(long id);
 }

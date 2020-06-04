@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import co.edu.icesi.internetcomputing.workshop.model.TsscGame;
 import co.edu.icesi.internetcomputing.workshop.model.TsscGame.GameValidator;
+import co.edu.icesi.internetcomputing.workshop.model.TsscTimecontrol;
 import co.edu.icesi.internetcomputing.workshop.services.TsscGameServiceImp;
+import co.edu.icesi.internetcomputing.workshop.services.TsscTimeControlServiceImp;
 import co.edu.icesi.internetcomputing.workshop.services.TsscTopicServiceImp;
 
 @Controller
@@ -128,5 +130,13 @@ public class TsscGameController {
 		}
 		return "redirect:/games/";
 	}
-
+	
+	@GetMapping("/game/stories/{id}")
+	public String stories(@PathVariable("id") long id, Model model) {
+		TsscGame game = tsscGameServiceImp.findById(id);
+		model.addAttribute("tsscGame", game);
+		model.addAttribute("stories", game.getTsscStories());
+		return "games/stories";
+	}
+	
 }
