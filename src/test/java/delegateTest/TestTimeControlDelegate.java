@@ -42,7 +42,7 @@ public class TestTimeControlDelegate {
 	}
 	
 	@Test
-	public void addAdminTest() {
+	public void addTimecontrolTest() {
 		TsscTimecontrol timecontrol = new TsscTimecontrol();
 		timecontrol.setName("Goku");
 		TransactionBody<TsscTimecontrol> body = new TransactionBody<TsscTimecontrol>();
@@ -54,7 +54,7 @@ public class TestTimeControlDelegate {
 	}
 	
 	@Test
-	public void getAdminTest() {
+	public void getTimecontrolTest() {
 		TsscTimecontrol timecontrol = new TsscTimecontrol();
 		timecontrol.setName("Vegeta");
 		TransactionBody<TsscTimecontrol> body = new TransactionBody<TsscTimecontrol>();
@@ -66,7 +66,7 @@ public class TestTimeControlDelegate {
 	}
 	
 	@Test
-	public void getAllAdminTest() {
+	public void getAllTimecontrolTest() {
 		TransactionBody<List<TsscTimecontrol>> body = new TransactionBody<List<TsscTimecontrol>>();
 		List<TsscTimecontrol> list = new ArrayList<TsscTimecontrol>();
 		TsscTimecontrol timecontrol1 = new TsscTimecontrol();
@@ -84,6 +84,20 @@ public class TestTimeControlDelegate {
 			size++;
 		}
 		assertEquals(size, 2);
+	}
+	
+	@Test
+	public void updateTimecontrolTest() {
+		TsscTimecontrol timeControl = new TsscTimecontrol();
+		timeControl.setName("Gojan");
+		TransactionBody<TsscTimecontrol> body = new TransactionBody<TsscTimecontrol>();
+		body.setBody(timeControl);
+		ResponseEntity<TransactionBody<TsscTimecontrol>> response = new ResponseEntity<TransactionBody<TsscTimecontrol>>(body, HttpStatus.ACCEPTED);
+		when(restTemplate.exchange(Mockito.anyString(),Mockito.any(HttpMethod.class),Mockito.any(HttpEntity.class),Mockito.any(ParameterizedTypeReference.class))).thenReturn(response);
+		timeControl.setName("Gohan");
+		timeControlDelegate.updateTimeControl(timeControl);
+		TsscTimecontrol timeControlN = timeControlDelegate.getTsscTimeControl(timeControl.getId());
+		assertEquals("Gohan", timeControlN.getName());
 	}
 	
 }

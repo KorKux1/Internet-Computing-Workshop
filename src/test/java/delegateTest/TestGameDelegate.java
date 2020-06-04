@@ -42,7 +42,7 @@ public class TestGameDelegate {
 	}
 	
 	@Test
-	public void addAdminTest() {
+	public void addGameTest() {
 		TsscGame game = new TsscGame();
 		game.setName("Goku");
 		TransactionBody<TsscGame> body = new TransactionBody<TsscGame>();
@@ -54,7 +54,7 @@ public class TestGameDelegate {
 	}
 	
 	@Test
-	public void getAdminTest() {
+	public void getGameTest() {
 		TsscGame game = new TsscGame();
 		game.setName("Vegeta");
 		TransactionBody<TsscGame> body = new TransactionBody<TsscGame>();
@@ -66,7 +66,7 @@ public class TestGameDelegate {
 	}
 	
 	@Test
-	public void getAllAdminTest() {
+	public void getAllGameTest() {
 		TransactionBody<List<TsscGame>> body = new TransactionBody<List<TsscGame>>();
 		List<TsscGame> list = new ArrayList<TsscGame>();
 		TsscGame game1 = new TsscGame();
@@ -84,6 +84,20 @@ public class TestGameDelegate {
 			size++;
 		}
 		assertEquals(size, 2);
+	}
+	
+	@Test
+	public void updateGameTest() {
+		TsscGame game = new TsscGame();
+		game.setName("Gojan");
+		TransactionBody<TsscGame> body = new TransactionBody<TsscGame>();
+		body.setBody(game);
+		ResponseEntity<TransactionBody<TsscGame>> response = new ResponseEntity<TransactionBody<TsscGame>>(body, HttpStatus.ACCEPTED);
+		when(restTemplate.exchange(Mockito.anyString(),Mockito.any(HttpMethod.class),Mockito.any(HttpEntity.class),Mockito.any(ParameterizedTypeReference.class))).thenReturn(response);
+		game.setName("Gohan");
+		gameDelegate.updateGame(game);
+		TsscGame gameN = gameDelegate.getGame(game.getId());
+		assertEquals("Gohan", gameN.getName());
 	}
 	
 }
