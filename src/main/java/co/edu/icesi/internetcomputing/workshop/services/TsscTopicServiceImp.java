@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import co.edu.icesi.internetcomputing.workshop.dao.TsscTopicDao;
 import co.edu.icesi.internetcomputing.workshop.model.TsscTopic;
 
+
 @Service
 public class TsscTopicServiceImp implements TsscTopicService {
 	

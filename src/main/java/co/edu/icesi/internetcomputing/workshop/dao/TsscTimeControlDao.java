@@ -34,8 +34,7 @@ public class TsscTimeControlDao implements ITsscTimeControlDao{
 	@Override
 	@Transactional
 	public void delete(TsscTimecontrol entity) {
-		entityManager.remove(entityManager.contains(entity) ? entity : entityManager.merge(entity));
-		
+		entityManager.remove(entityManager.contains(entity) ? entity : entityManager.merge(entity));	
 	}
 
 	@Override
