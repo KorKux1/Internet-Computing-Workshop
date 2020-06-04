@@ -9,4 +9,8 @@ public interface TsscStoryDelegate {
 	public TsscStory addStory(TsscStory story);
 
 	public TsscStory getStory(Long id);
+	
+	public void removeStory(TsscStory story) throws Exception;
+
+	public void updateStory(TsscStory story);
 }

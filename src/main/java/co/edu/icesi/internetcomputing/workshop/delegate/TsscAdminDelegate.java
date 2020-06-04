@@ -8,5 +8,9 @@ public interface TsscAdminDelegate {
 	public TsscAdmin getAdmin(Long id);
 
 	public TsscAdmin addTsscAdmin(TsscAdmin admin);
+	
+	public void removeAdmin(TsscAdmin admin) throws Exception;
+
+	public void updateAdmin(TsscAdmin admin);
 
 }

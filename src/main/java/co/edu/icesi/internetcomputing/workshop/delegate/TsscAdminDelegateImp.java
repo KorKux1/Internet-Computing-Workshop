@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
@@ -54,6 +55,32 @@ public class TsscAdminDelegateImp extends GenericDelegate implements TsscAdminDe
 		});
 		return response.getBody().getBody();
 
+	}
+
+	@Override
+	public void removeAdmin(TsscAdmin admin) throws Exception {
+		TransactionBody<TsscAdmin> transaction = new TransactionBody<>("delAdmin", admin);
+		HttpEntity<TransactionBody<TsscAdmin>> request = new HttpEntity<>(transaction);
+		ResponseEntity<TransactionBody<TsscAdmin>> response = null;
+		
+		response = restTemplate.exchange(SERVER+"api/admins", HttpMethod.DELETE, request,
+				new ParameterizedTypeReference<TransactionBody<TsscAdmin>>() {
+				});
+		if(response.getStatusCode().equals(HttpStatus.PRECONDITION_FAILED)) {
+			Exception e =new Exception("Error Eliminando");
+			throw e;
+		}
+		
+	}
+
+	@Override
+	public void updateAdmin(TsscAdmin admin) {
+		TransactionBody<TsscAdmin> transaction = new TransactionBody<>("uptAdmin", admin);
+		HttpEntity<TransactionBody<TsscAdmin>> request = new HttpEntity<>(transaction);
+		ResponseEntity<TransactionBody<TsscAdmin>> response = null;
+		response = restTemplate.exchange(SERVER+"api/admins", HttpMethod.PUT, request,
+				new ParameterizedTypeReference<TransactionBody<TsscAdmin>>() {
+		});
 	}
 
 	

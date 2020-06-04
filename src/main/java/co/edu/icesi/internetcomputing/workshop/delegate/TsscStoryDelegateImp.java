@@ -64,4 +64,30 @@ public class TsscStoryDelegateImp extends GenericDelegate implements TsscStoryDe
 		return response.getBody().getBody();
 	}
 
+	@Override
+	public void removeStory(TsscStory story) throws Exception {
+		TransactionBody<TsscStory> transaction = new TransactionBody<>("delStory", story);
+		HttpEntity<TransactionBody<TsscStory>> request = new HttpEntity<>(transaction);
+		ResponseEntity<TransactionBody<TsscStory>> response = null;
+		
+		response = restTemplate.exchange(SERVER+"api/stories", HttpMethod.DELETE, request,
+				new ParameterizedTypeReference<TransactionBody<TsscStory>>() {
+				});
+		if(response.getStatusCode().equals(HttpStatus.PRECONDITION_FAILED)) {
+			Exception e =new Exception("Error Eliminando");
+			throw e;
+		}
+	}
+
+	@Override
+	public void updateStory(TsscStory story) {
+		TransactionBody<TsscStory> transaction = new TransactionBody<>("uptStory",story);
+		HttpEntity<TransactionBody<TsscStory>> request = new HttpEntity<>(transaction);
+		ResponseEntity<TransactionBody<TsscStory>> response = null;
+		response = restTemplate.exchange(SERVER+"api/stories", HttpMethod.PUT, request,
+				new ParameterizedTypeReference<TransactionBody<TsscStory>>() {
+				});
+		
+	}
+
 }

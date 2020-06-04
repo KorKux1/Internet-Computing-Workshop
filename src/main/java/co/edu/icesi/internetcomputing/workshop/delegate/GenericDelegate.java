@@ -24,7 +24,7 @@ public abstract class GenericDelegate {
 	
 	private HttpClient httpClient() {
 		CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
-		credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials("korkux", "123"));
+		credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials("KorKux", "1234"));
 		
 		HttpClient client = HttpClientBuilder.create()
 							.setDefaultCredentialsProvider(credentialsProvider)

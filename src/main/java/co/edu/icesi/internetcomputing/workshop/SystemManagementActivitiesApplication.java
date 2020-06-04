@@ -11,9 +11,9 @@ import co.edu.icesi.internetcomputing.workshop.services.TsscAdminServiceImp;
 public class SystemManagementActivitiesApplication {
 
 	public static void main(String[] args) {
+		
 		ConfigurableApplicationContext contex = SpringApplication.run(SystemManagementActivitiesApplication.class, args);
 		TsscAdminServiceImp tsscAdminServiceImp = contex.getBean(TsscAdminServiceImp.class);
-		
 		TsscAdmin tsscAdmin = new TsscAdmin();
 		tsscAdmin.setUsername("KorKux");
 		tsscAdmin.setPassword("{noop}1234");

@@ -64,4 +64,28 @@ public class TsscGameDelegateImp extends GenericDelegate implements TsscGameDele
 		return response.getBody().getBody();
 	}
 
+	@Override
+	public void removeGame(TsscGame game) throws Exception {
+		TransactionBody<TsscGame> transaction = new TransactionBody<>("delGame", game);
+		HttpEntity<TransactionBody<TsscGame>> request = new HttpEntity<>(transaction);
+		ResponseEntity<TransactionBody<TsscGame>> response = null;
+		
+		response = restTemplate.exchange(SERVER+"api/games", HttpMethod.DELETE, request,
+				new ParameterizedTypeReference<TransactionBody<TsscGame>>() {
+				});
+		if(response.getStatusCode().equals(HttpStatus.PRECONDITION_FAILED)) {
+			Exception e =new Exception("Error Eliminando");
+			throw e;
+		}
+	}
+
+	@Override
+	public void updateGame(TsscGame game) {
+		TransactionBody<TsscGame> transaction = new TransactionBody<>("uptGame", game);
+		HttpEntity<TransactionBody<TsscGame>> request = new HttpEntity<>(transaction);
+		ResponseEntity<TransactionBody<TsscGame>> response = null;
+		response = restTemplate.exchange(SERVER+"api/games", HttpMethod.PUT, request,
+				new ParameterizedTypeReference<TransactionBody<TsscGame>>() {
+		});
+	}
 }

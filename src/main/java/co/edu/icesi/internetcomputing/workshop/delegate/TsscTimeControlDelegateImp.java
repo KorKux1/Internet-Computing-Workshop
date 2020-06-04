@@ -64,4 +64,31 @@ public class TsscTimeControlDelegateImp extends GenericDelegate implements TsscT
 		return response.getBody().getBody();
 	}
 
+	@Override
+	public void removeTimeControl(TsscTimecontrol timeControl) throws Exception {
+		TransactionBody<TsscTimecontrol> transaction = new TransactionBody<>("delTimeControl", timeControl);
+		HttpEntity<TransactionBody<TsscTimecontrol>> request = new HttpEntity<>(transaction);
+		ResponseEntity<TransactionBody<TsscTimecontrol>> response = null;
+		
+		response = restTemplate.exchange(SERVER+"api/timeControles", HttpMethod.DELETE, request,
+				new ParameterizedTypeReference<TransactionBody<TsscTimecontrol>>() {
+				});
+		if(response.getStatusCode().equals(HttpStatus.PRECONDITION_FAILED)) {
+			Exception e =new Exception("Error Eliminando");
+			throw e;
+		}
+		
+	}
+
+	@Override
+	public void updateTimeControl(TsscTimecontrol timeControl) {
+		TransactionBody<TsscTimecontrol> transaction = new TransactionBody<>("uptTimeControl", timeControl);
+		HttpEntity<TransactionBody<TsscTimecontrol>> request = new HttpEntity<>(transaction);
+		ResponseEntity<TransactionBody<TsscTimecontrol>> response = null;
+		response = restTemplate.exchange(SERVER+"api/timeControles", HttpMethod.PUT, request,
+				new ParameterizedTypeReference<TransactionBody<TsscTimecontrol>>() {
+				});
+		
+	}
+
 }

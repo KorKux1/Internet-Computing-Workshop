@@ -9,4 +9,8 @@ public interface TsscTimeControlDelegate {
 	public TsscTimecontrol addTsscTimeControl(TsscTimecontrol timeControl);
 
 	public TsscTimecontrol getTsscTimeControl(Long id);
+	
+	public void removeTimeControl(TsscTimecontrol timeControl) throws Exception;
+
+	public void updateTimeControl(TsscTimecontrol timeControl);
 }

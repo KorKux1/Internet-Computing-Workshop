@@ -60,4 +60,30 @@ public class TsscTopicDelegateImp extends GenericDelegate implements TsscTopicDe
 					});
 		return response.getBody().getBody();
 	}
+
+	@Override
+	public void removeTopic(TsscTopic topic) throws Exception {
+		TransactionBody<TsscTopic> transaction = new TransactionBody<>("delTopics", topic);
+		HttpEntity<TransactionBody<TsscTopic>> request = new HttpEntity<>(transaction);
+		ResponseEntity<TransactionBody<TsscTopic>> response = null;
+		
+		response = restTemplate.exchange(SERVER+"api/topics", HttpMethod.DELETE, request,
+				new ParameterizedTypeReference<TransactionBody<TsscTopic>>() {
+				});
+		if(response.getStatusCode().equals(HttpStatus.PRECONDITION_FAILED)) {
+			Exception e =new Exception("Error Eliminando");
+			throw e;
+		}
+		
+	}
+
+	@Override
+	public void updateTopic(TsscTopic topic) {
+		TransactionBody<TsscTopic> transaction = new TransactionBody<>("uptTopics", topic);
+		HttpEntity<TransactionBody<TsscTopic>> request = new HttpEntity<>(transaction);
+		ResponseEntity<TransactionBody<TsscTopic>> response = null;
+		response = restTemplate.exchange(SERVER+"api/topics", HttpMethod.PUT, request,
+					new ParameterizedTypeReference<TransactionBody<TsscTopic>>() {
+					});	
+	}
 }

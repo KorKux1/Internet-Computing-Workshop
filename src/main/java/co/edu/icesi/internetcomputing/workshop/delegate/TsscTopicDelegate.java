@@ -9,4 +9,8 @@ public interface TsscTopicDelegate {
 	public TsscTopic addTopic(TsscTopic topic);
 
 	public TsscTopic getTopic(Long id);
+	
+	public void removeTopic(TsscTopic topic) throws Exception;
+
+	public void updateTopic(TsscTopic topic);
 }
