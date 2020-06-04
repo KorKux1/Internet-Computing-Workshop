@@ -6,21 +6,21 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import co.edu.icesi.internetcomputing.workshop.dao.TsscGameDao;
+import co.edu.icesi.internetcomputing.workshop.dao.TsscStoryDao;
 import co.edu.icesi.internetcomputing.workshop.model.TsscGame;
 import co.edu.icesi.internetcomputing.workshop.model.TsscStory;
-import co.edu.icesi.internetcomputing.workshop.repositories.TsscGameRepository;
-import co.edu.icesi.internetcomputing.workshop.repositories.TsscStoryRepository;
 
 @Service
 public class TsscStoryServiceImp implements TsscStoryService {
 
-	private TsscStoryRepository tsscStoryRepository;
-	private TsscGameRepository tsscGameRepository;
+	private TsscStoryDao tsscStoryDao;
+	private TsscGameDao tsscGameDao;
 	
 	@Autowired
-	public TsscStoryServiceImp(TsscStoryRepository tsscStoryRepository, TsscGameRepository tsscGameRepository) {
-		this.tsscStoryRepository = tsscStoryRepository;
-		this.tsscGameRepository = tsscGameRepository;
+	public TsscStoryServiceImp(TsscStoryDao tsscStoryDao, TsscGameDao tsscGameDao) {
+		this.tsscStoryDao = tsscStoryDao;
+		this.tsscGameDao = tsscGameDao;
 	}
 	
 	@Override
@@ -36,23 +36,23 @@ public class TsscStoryServiceImp implements TsscStoryService {
 			return false;
 		}
 		else {
-			Optional<TsscGame> tsscGames = tsscGameRepository.findById(tsscStory.getTsscGame().getId());
+			TsscGame tsscGames = tsscGameDao.findById(tsscStory.getTsscGame().getId());
 			if(tsscGames == null) {
 				return false;
 			}
 		}
-		tsscStoryRepository.save(tsscStory);
+		tsscStoryDao.save(tsscStory);
 		return true;
 	}
 
 	@Override
 	public TsscStory findById(long id) {
-		return tsscStoryRepository.findById(id).get();
+		return tsscStoryDao.findById(id);
 	}
 
 	@Override
 	public Iterable<TsscStory> findAll() {
-		return tsscStoryRepository.findAll();
+		return tsscStoryDao.findAll();
 	}
 
 }

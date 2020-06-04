@@ -8,28 +8,29 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import co.edu.icesi.internetcomputing.workshop.dao.TsscGameDao;
+import co.edu.icesi.internetcomputing.workshop.dao.TsscStoryDao;
+import co.edu.icesi.internetcomputing.workshop.dao.TsscTopicDao;
 import co.edu.icesi.internetcomputing.workshop.model.TsscGame;
 import co.edu.icesi.internetcomputing.workshop.model.TsscStory;
 import co.edu.icesi.internetcomputing.workshop.model.TsscTopic;
-import co.edu.icesi.internetcomputing.workshop.repositories.TsscGameRepository;
-import co.edu.icesi.internetcomputing.workshop.repositories.TsscStoryRepository;
 import co.edu.icesi.internetcomputing.workshop.repositories.TsscTopicRepository;
 
 @Service
 public class TsscGameServiceImp implements TsscGameService {
 
-	private TsscGameRepository tsscGameRepository;
+	private TsscGameDao tsscGameDao;
 	
-	private TsscTopicRepository tsscTopicRepository;
+	private TsscTopicDao tsscTopicDao;
 	
-	private TsscStoryRepository tsscStoryRepository;
+	private TsscStoryDao tsscStoryDao;
 	
 	
 	@Autowired
-	public TsscGameServiceImp(TsscGameRepository tsscGameRepository,TsscTopicRepository tsscTopicRepository, TsscStoryRepository tsscStoryRepository) {
-		this.tsscGameRepository = tsscGameRepository;
-		this.tsscTopicRepository = tsscTopicRepository;
-		this.tsscStoryRepository = tsscStoryRepository;
+	public TsscGameServiceImp(TsscGameDao tsscGameDao, TsscTopicDao tsscTopicDao, TsscStoryDao tsscStoryDao) {
+		this.tsscGameDao = tsscGameDao;
+		this.tsscTopicDao = tsscTopicDao;
+		this.tsscStoryDao = tsscStoryDao;
 	}
 	
 	@Override
@@ -41,18 +42,18 @@ public class TsscGameServiceImp implements TsscGameService {
 			return false;
 		}
 		if (tsscGame.getTsscTopic() != null) {
-			Optional<TsscTopic> aux = tsscTopicRepository.findById(tsscGame.getTsscTopic().getId());
+			TsscTopic aux = tsscTopicDao.findById(tsscGame.getTsscTopic().getId());
 			if (aux == null) {
 				return false;
 			}
 		}
-		tsscGameRepository.save(tsscGame);
+		tsscGameDao.save(tsscGame);
 		return true;
 	}
 
 	@Override
-	public Optional<TsscGame> findById(long id) {
-		return tsscGameRepository.findById(id);
+	public TsscGame findById(long id) {
+		return tsscGameDao.findById(id);
 	}
 
 	@Override
@@ -65,7 +66,7 @@ public class TsscGameServiceImp implements TsscGameService {
 			return false;
 		}
 		if (tsscGame.getTsscTopic() != null) {
-			Optional<TsscTopic> aux = tsscTopicRepository.findById(tsscGame.getTsscTopic().getId());
+			TsscTopic aux = tsscTopicDao.findById(tsscGame.getTsscTopic().getId());
 			if (aux == null) {
 				return false;
 			}else {
@@ -73,18 +74,18 @@ public class TsscGameServiceImp implements TsscGameService {
 				for(TsscStory tsscStory: tsscTopic.getTsscStories()) {
 					TsscStory target = new TsscStory();
 					BeanUtils.copyProperties(tsscStory, target);
-					tsscStoryRepository.save(target);
+					tsscStoryDao.save(target);
 					tsscGame.addTsscStory(target);
 				}
 			}
 		}
-		tsscGameRepository.save(tsscGame);
+		tsscGameDao.save(tsscGame);
 		return true;
 	}
 
 	@Override
 	public Iterable<TsscGame> findAll() {
-		return tsscGameRepository.findAll();
+		return tsscGameDao.findAll();
 	}
 	
 }

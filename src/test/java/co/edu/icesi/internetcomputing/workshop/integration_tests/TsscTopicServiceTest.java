@@ -20,6 +20,7 @@ import co.edu.icesi.internetcomputing.workshop.model.TsscTopic;
 import co.edu.icesi.internetcomputing.workshop.services.TsscTopicServiceImp;
 
 @SpringBootTest(classes=SystemManagementActivitiesApplication.class)
+
 public class TsscTopicServiceTest extends AbstractTestNGSpringContextTests  {
 	
 	@Autowired

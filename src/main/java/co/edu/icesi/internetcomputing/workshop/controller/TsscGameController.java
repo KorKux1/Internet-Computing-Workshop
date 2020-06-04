@@ -70,30 +70,30 @@ public class TsscGameController {
 	
 	@GetMapping("/games/{id}/stories")
 	public String indexStories(@PathVariable("id") long id, Model model) {
-		Optional<TsscGame> tsscGame = tsscGameServiceImp.findById(id);
+		TsscGame tsscGame = tsscGameServiceImp.findById(id);
 		if(tsscGame == null) {
 			throw new IllegalArgumentException("Id Invalido:" + id);
 		}
-		model.addAttribute("stories", tsscGame.get().getTsscStories());
+		model.addAttribute("stories", tsscGame.getTsscStories());
 		
 		return "stories/index";
 	}
 	
 	@GetMapping("/games/edit/{id}")
 	public String edit(@PathVariable("id") long id, Model model) {
-		Optional<TsscGame> tsscGame = tsscGameServiceImp.findById(id);
+		TsscGame tsscGame = tsscGameServiceImp.findById(id);
 		if (tsscGame == null) {
 			throw new IllegalArgumentException("Id Incorrecto:" + id);
 		}
-		model.addAttribute("tsscGame", tsscGame.get());
-		model.addAttribute("name", tsscGame.get().getName());
-		model.addAttribute("adminPassword", tsscGame.get().getAdminPassword());
-		model.addAttribute("scheduledDate", tsscGame.get().getScheduledDate());
-		model.addAttribute("scheduledTime", tsscGame.get().getScheduledTime());
-		model.addAttribute("nGroups", tsscGame.get().getNGroups());
-		model.addAttribute("nSprints", tsscGame.get().getNSprints());
-		model.addAttribute("userPassword", tsscGame.get().getUserPassword());
-		model.addAttribute("guestPassword", tsscGame.get().getGuestPassword());
+		model.addAttribute("tsscGame", tsscGame);
+		model.addAttribute("name", tsscGame.getName());
+		model.addAttribute("adminPassword", tsscGame.getAdminPassword());
+		model.addAttribute("scheduledDate", tsscGame.getScheduledDate());
+		model.addAttribute("scheduledTime", tsscGame.getScheduledTime());
+		model.addAttribute("nGroups", tsscGame.getNGroups());
+		model.addAttribute("nSprints", tsscGame.getNSprints());
+		model.addAttribute("userPassword", tsscGame.getUserPassword());
+		model.addAttribute("guestPassword", tsscGame.getGuestPassword());
 		model.addAttribute("topics", tsscTopicServiceImp.findAll());
 
 		return "games/edit";	

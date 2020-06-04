@@ -14,7 +14,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.orm.jpa.JpaObjectRetrievalFailureException;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -34,6 +36,7 @@ import co.edu.icesi.internetcomputing.workshop.services.TsscStoryServiceImp;
 import co.edu.icesi.internetcomputing.workshop.services.TsscTopicServiceImp;
 
 @SpringBootTest(classes=SystemManagementActivitiesApplication.class)
+@Rollback(false)
 public class TsscGameServiceTest extends AbstractTestNGSpringContextTests {
 	
 	
@@ -96,8 +99,8 @@ public class TsscGameServiceTest extends AbstractTestNGSpringContextTests {
 		tsscGame.setTsscTopic(tsscTopic);
 		
 		assertTrue(tsscGameServiceImp.save(tsscGame));
-		assertNotNull(tsscGameServiceImp.findById(tsscGame.getId()).get());
-		assertEquals(tsscGameServiceImp.findById(tsscGame.getId()).get().getName(), tsscGame.getName());
+		assertNotNull(tsscGameServiceImp.findById(tsscGame.getId()));
+		assertEquals(tsscGameServiceImp.findById(tsscGame.getId()).getName(), tsscGame.getName());
 	}
 	
 	@Test(expectedExceptions=NoSuchElementException.class, expectedExceptionsMessageRegExp="No value present")
@@ -112,7 +115,7 @@ public class TsscGameServiceTest extends AbstractTestNGSpringContextTests {
 		tsscGame.setTsscTopic(tsscTopic);
 		
 		assertFalse(tsscGameServiceImp.save(tsscGame));
-		assertNull(tsscGameServiceImp.findById(tsscGame.getId()).get());
+		assertNull(tsscGameServiceImp.findById(tsscGame.getId()));
 	}
 	
 	@Test(expectedExceptions=NoSuchElementException.class, expectedExceptionsMessageRegExp="No value present")
@@ -128,7 +131,7 @@ public class TsscGameServiceTest extends AbstractTestNGSpringContextTests {
 		tsscGame.setTsscTopic(tsscTopic);
 		
 		assertFalse(tsscGameServiceImp.save(tsscGame));
-		assertNull(tsscGameServiceImp.findById(tsscGame.getId()).get());
+		assertNull(tsscGameServiceImp.findById(tsscGame.getId()));
 	}
 	
 	@Test(expectedExceptions = JpaObjectRetrievalFailureException.class)
@@ -158,7 +161,6 @@ public class TsscGameServiceTest extends AbstractTestNGSpringContextTests {
 	}
 	
 	@Test
-	@Transactional
 	public void testAdd2Game1() {
 		TsscGame tsscGame = new TsscGame();
 		tsscGame.setId(0);
@@ -172,7 +174,7 @@ public class TsscGameServiceTest extends AbstractTestNGSpringContextTests {
 		tsscGame.setTsscTopic(tsscTopic);
 		
 		assertTrue(tsscGameServiceImp.save2(tsscGame));
-		TsscGame  game = tsscGameServiceImp.findById(tsscGame.getId()).get();
+		TsscGame  game = tsscGameServiceImp.findById(tsscGame.getId());
 		assertEquals(game.getTsscStories().get(0).getDescription(), tsscGame.getTsscTopic().getTsscStories().get(0).getDescription());
 	}
 	
@@ -198,16 +200,15 @@ public class TsscGameServiceTest extends AbstractTestNGSpringContextTests {
 		tsscGameU.setTsscTopic(tsscTopic);
 		tsscGameServiceImp.save(tsscGameU);
 		
-		Optional<TsscGame> tsscGames = tsscGameServiceImp.findById(tsscGameU.getId());
-		TsscGame tsscGame = tsscGames.get();
+		TsscGame tsscGame = tsscGameServiceImp.findById(tsscGameU.getId());
 		tsscGame.setName("Game Updated");
 		
 		assertTrue(tsscGameServiceImp.save(tsscGame));
-		assertEquals(tsscGameServiceImp.findById(tsscGame.getId()).get().getName(), tsscGame.getName());
+		assertEquals(tsscGameServiceImp.findById(tsscGame.getId()).getName(), tsscGame.getName());
 	}
 	
 	@Test(groups="Update")
-	public void testUpdateGame2() {	
+	@Transactional(readOnly = false, propagation = Propagation.REQUIRED, rollbackFor = Exception.class)	public void testUpdateGame2() {	
 		tsscTopic = new TsscTopic();
 		tsscTopic.setId(1);
 		tsscTopic.setName("Topic 1");
@@ -224,17 +225,17 @@ public class TsscGameServiceTest extends AbstractTestNGSpringContextTests {
 		tsscGameU.setTsscTopic(tsscTopic);
 		tsscGameServiceImp.save(tsscGameU);
 		
-		Optional<TsscGame> tsscGames = tsscGameServiceImp.findById(tsscGameU.getId());
-		TsscGame tsscGame = tsscGames.get();
+		TsscGame tsscGame = tsscGameServiceImp.findById(tsscGameU.getId());
 		tsscGame.setName("Game Updated");
 		tsscGame.setNGroups(0);
 		
 		assertFalse(tsscGameServiceImp.save(tsscGame));
-		assertNotEquals(tsscGameServiceImp.findById(tsscGame.getId()).get().getNGroups()
+		assertNotEquals(tsscGameServiceImp.findById(tsscGame.getId()).getNGroups()
 				, tsscGame.getNGroups());
 	}
 	
 	@Test(groups="Update")
+	@Transactional(readOnly = false, propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
 	public void testUpdateGame3() {		
 		tsscTopic = new TsscTopic();
 		tsscTopic.setId(1);
@@ -252,17 +253,17 @@ public class TsscGameServiceTest extends AbstractTestNGSpringContextTests {
 		tsscGameU.setTsscTopic(tsscTopic);
 		tsscGameServiceImp.save(tsscGameU);
 		
-		Optional<TsscGame> tsscGames = tsscGameServiceImp.findById(tsscGameU.getId());
-		TsscGame tsscGame = tsscGames.get();
+		TsscGame tsscGame = tsscGameServiceImp.findById(tsscGameU.getId());
 		tsscGame.setName("Game Updated");
 		tsscGame.setNSprints(0);
 		
 		assertFalse(tsscGameServiceImp.save(tsscGame));
-		assertNotEquals(tsscGameServiceImp.findById(tsscGame.getId()).get().getNSprints()
+		assertNotEquals(tsscGameServiceImp.findById(tsscGame.getId()).getNSprints()
 				, tsscGame.getNSprints());
 	}
 	
 	@Test(groups="Update", expectedExceptions=JpaObjectRetrievalFailureException.class)
+	@Transactional(readOnly = false, propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
 	public void testUpdateGame4() {		
 		tsscTopic = new TsscTopic();
 		tsscTopic.setId(1);
@@ -280,15 +281,14 @@ public class TsscGameServiceTest extends AbstractTestNGSpringContextTests {
 		tsscGameU.setTsscTopic(tsscTopic);
 		tsscGameServiceImp.save(tsscGameU);
 		
-		Optional<TsscGame> tsscGames = tsscGameServiceImp.findById(tsscGameU.getId());
-		TsscGame tsscGame = tsscGames.get();
+		TsscGame tsscGame = tsscGameServiceImp.findById(tsscGameU.getId());
 		tsscGame.setName("Game Updated");
 		TsscTopic tsscTopicU = new TsscTopic();
 		tsscTopicU.setId(6);
 		tsscGame.setTsscTopic(tsscTopicU);
 		
 		assertFalse(tsscGameServiceImp.save(tsscGame));
-		assertNotEquals(tsscGameServiceImp.findById(tsscGame.getId()).get().getTsscTopic().getId()
+		assertNotEquals(tsscGameServiceImp.findById(tsscGame.getId()).getTsscTopic().getId()
 				, tsscTopicU.getId());
 	}
 

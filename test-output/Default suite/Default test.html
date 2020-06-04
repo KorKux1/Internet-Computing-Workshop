@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>25/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>17/8/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Apr 03 23:47:48 COT 2020</td>
+<td>Started on:</td><td>Tue May 12 22:36:17 COT 2020</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (841 ms)</td>
+<tr><td>Total time:</td><td>1 seconds (1051 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,558 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest.testAdd2Game1()'><b>testAdd2Game1</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest</td>
+<td><div><pre>java.lang.NullPointerException
+	at co.edu.icesi.internetcomputing.workshop.services.TsscGameServiceImp.save2(TsscGameServiceImp.java:69)
+	at co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest.testAdd2Game1(TsscGameServiceTest.java:191)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1954406292", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1954406292'><pre>java.lang.NullPointerException
+	at co.edu.icesi.internetcomputing.workshop.services.TsscGameServiceImp.save2(TsscGameServiceImp.java:69)
+	at co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest.testAdd2Game1(TsscGameServiceTest.java:191)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@76a3e297</td></tr>
+<tr>
+<td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest.testAddGame1()'><b>testAddGame1</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest</td>
+<td><div><pre>java.lang.NullPointerException
+	at co.edu.icesi.internetcomputing.workshop.services.TsscGameServiceImp.save(TsscGameServiceImp.java:45)
+	at co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest.testAddGame1(TsscGameServiceTest.java:103)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1118078504", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1118078504'><pre>java.lang.NullPointerException
+	at co.edu.icesi.internetcomputing.workshop.services.TsscGameServiceImp.save(TsscGameServiceImp.java:45)
+	at co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest.testAddGame1(TsscGameServiceTest.java:103)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@76a3e297</td></tr>
+<tr>
+<td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest.testAddGame4()'><b>testAddGame4</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest</td>
+<td><div><pre>java.lang.NullPointerException
+	at co.edu.icesi.internetcomputing.workshop.services.TsscGameServiceImp.save(TsscGameServiceImp.java:45)
+	at co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest.testAddGame4(TsscGameServiceTest.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace341796579", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace341796579'><pre>java.lang.NullPointerException
+	at co.edu.icesi.internetcomputing.workshop.services.TsscGameServiceImp.save(TsscGameServiceImp.java:45)
+	at co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest.testAddGame4(TsscGameServiceTest.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@76a3e297</td></tr>
+<tr>
+<td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest.testAddStory1()'><b>testAddStory1</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest</td>
+<td><div><pre>java.lang.NullPointerException
+	at co.edu.icesi.internetcomputing.workshop.services.TsscStoryServiceImp.save(TsscStoryServiceImp.java:39)
+	at co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest.testAddStory1(TsscStoryServiceTest.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1926343982", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1926343982'><pre>java.lang.NullPointerException
+	at co.edu.icesi.internetcomputing.workshop.services.TsscStoryServiceImp.save(TsscStoryServiceImp.java:39)
+	at co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest.testAddStory1(TsscStoryServiceTest.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3aeaafa6</td></tr>
+<tr>
+<td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest.testAddTopic1()'><b>testAddTopic1</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest<br>Test method: Add a topic without errors</td>
+<td><div><pre>java.lang.NullPointerException
+	at co.edu.icesi.internetcomputing.workshop.services.TsscTopicServiceImp.save(TsscTopicServiceImp.java:33)
+	at co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest.testAddTopic1(TsscTopicServiceTest.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1984975621", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1984975621'><pre>java.lang.NullPointerException
+	at co.edu.icesi.internetcomputing.workshop.services.TsscTopicServiceImp.save(TsscTopicServiceImp.java:33)
+	at co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest.testAddTopic1(TsscTopicServiceTest.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@4d3167f4</td></tr>
+<tr>
+<td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest.testUpdateGame1()'><b>testUpdateGame1</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest</td>
+<td><div><pre>java.lang.NullPointerException
+	at co.edu.icesi.internetcomputing.workshop.services.TsscGameServiceImp.save(TsscGameServiceImp.java:45)
+	at co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest.testUpdateGame1(TsscGameServiceTest.java:233)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2093010349", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2093010349'><pre>java.lang.NullPointerException
+	at co.edu.icesi.internetcomputing.workshop.services.TsscGameServiceImp.save(TsscGameServiceImp.java:45)
+	at co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest.testUpdateGame1(TsscGameServiceTest.java:233)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@76a3e297</td></tr>
+<tr>
+<td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest.testUpdateStory1()'><b>testUpdateStory1</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest</td>
+<td><div><pre>java.lang.NullPointerException
+	at co.edu.icesi.internetcomputing.workshop.services.TsscStoryServiceImp.save(TsscStoryServiceImp.java:39)
+	at co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest.testUpdateStory1(TsscStoryServiceTest.java:189)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace489349054", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace489349054'><pre>java.lang.NullPointerException
+	at co.edu.icesi.internetcomputing.workshop.services.TsscStoryServiceImp.save(TsscStoryServiceImp.java:39)
+	at co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest.testUpdateStory1(TsscStoryServiceTest.java:189)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3aeaafa6</td></tr>
+<tr>
+<td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest.testUpdateTopic1()'><b>testUpdateTopic1</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest<br>Test method: Update the topic without errors</td>
+<td><div><pre>java.lang.NullPointerException
+	at co.edu.icesi.internetcomputing.workshop.services.TsscTopicServiceImp.save(TsscTopicServiceImp.java:33)
+	at co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest.testUpdateTopic1(TsscTopicServiceTest.java:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace60292059", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace60292059'><pre>java.lang.NullPointerException
+	at co.edu.icesi.internetcomputing.workshop.services.TsscTopicServiceImp.save(TsscTopicServiceImp.java:33)
+	at co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest.testUpdateTopic1(TsscTopicServiceTest.java:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@4d3167f4</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,74 +627,49 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest.testAdd2Game1()'><b>testAdd2Game1</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest</td>
-<td></td>
-<td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0</td></tr>
-<tr>
-<td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest.testAddGame1()'><b>testAddGame1</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest</td>
-<td></td>
-<td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0</td></tr>
-<tr>
 <td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest.testAddGame2()'><b>testAddGame2</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest</td>
 <td></td>
 <td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20</td></tr>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3aeaafa6</td></tr>
 <tr>
 <td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest.testAddGame2()'><b>testAddGame2</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest</td>
 <td></td>
 <td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0</td></tr>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@76a3e297</td></tr>
 <tr>
 <td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest.testAddGame3()'><b>testAddGame3</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest</td>
 <td></td>
 <td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20</td></tr>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3aeaafa6</td></tr>
 <tr>
 <td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest.testAddGame3()'><b>testAddGame3</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest</td>
 <td></td>
 <td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0</td></tr>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@76a3e297</td></tr>
 <tr>
 <td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest.testAddGame4()'><b>testAddGame4</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest</td>
 <td></td>
 <td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20</td></tr>
-<tr>
-<td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest.testAddGame4()'><b>testAddGame4</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest</td>
-<td></td>
-<td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0</td></tr>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3aeaafa6</td></tr>
 <tr>
 <td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest.testAddGame5()'><b>testAddGame5</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest</td>
 <td></td>
 <td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20</td></tr>
-<tr>
-<td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest.testAddStory1()'><b>testAddStory1</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest</td>
-<td></td>
-<td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20</td></tr>
-<tr>
-<td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest.testAddTopic1()'><b>testAddTopic1</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest<br>Test method: Add a topic without errors</td>
-<td></td>
-<td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@fad74ee</td></tr>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3aeaafa6</td></tr>
 <tr>
 <td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest.testAddTopic2()'><b>testAddTopic2</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest<br>Test method: Added a topic where groups are not greater than zero</td>
 <td></td>
 <td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@fad74ee</td></tr>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@4d3167f4</td></tr>
 <tr>
 <td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest.testAddTopic3()'><b>testAddTopic3</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest<br>Test method: Added a topic where sprints are not greater than zero</td>
 <td></td>
 <td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@fad74ee</td></tr>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@4d3167f4</td></tr>
 <tr>
 <td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest.testAddTopicNull()'><b>testAddTopicNull</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest</td>
 <td><div><pre>java.lang.NullPointerException: El Game no puede ser nulo
-	at co.edu.icesi.internetcomputing.workshop.services.TsscGameServiceImp.save(TsscGameServiceImp.java:38)
+	at co.edu.icesi.internetcomputing.workshop.services.TsscGameServiceImp.save(TsscGameServiceImp.java:39)
 	at co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest.testAddTopicNull(TsscGameServiceTest.java:172)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -172,9 +699,9 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace594427726", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace594427726'><pre>java.lang.NullPointerException: El Game no puede ser nulo
-	at co.edu.icesi.internetcomputing.workshop.services.TsscGameServiceImp.save(TsscGameServiceImp.java:38)
+</pre></div><a href='#' onClick='toggleBox("stack-trace825249556", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace825249556'><pre>java.lang.NullPointerException: El Game no puede ser nulo
+	at co.edu.icesi.internetcomputing.workshop.services.TsscGameServiceImp.save(TsscGameServiceImp.java:39)
 	at co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest.testAddTopicNull(TsscGameServiceTest.java:172)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -206,11 +733,11 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0</td></tr>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@76a3e297</td></tr>
 <tr>
 <td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest.testAddTopicNull()'><b>testAddTopicNull</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest<br>Test method: Attempt to add null topic</td>
 <td><div><pre>java.lang.NullPointerException: El topic no puede ser Nulo
-	at co.edu.icesi.internetcomputing.workshop.services.TsscTopicServiceImp.save(TsscTopicServiceImp.java:24)
+	at co.edu.icesi.internetcomputing.workshop.services.TsscTopicServiceImp.save(TsscTopicServiceImp.java:26)
 	at co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest.testAddTopicNull(TsscTopicServiceTest.java:87)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -240,9 +767,9 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace931496835", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace931496835'><pre>java.lang.NullPointerException: El topic no puede ser Nulo
-	at co.edu.icesi.internetcomputing.workshop.services.TsscTopicServiceImp.save(TsscTopicServiceImp.java:24)
+</pre></div><a href='#' onClick='toggleBox("stack-trace464887938", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace464887938'><pre>java.lang.NullPointerException: El topic no puede ser Nulo
+	at co.edu.icesi.internetcomputing.workshop.services.TsscTopicServiceImp.save(TsscTopicServiceImp.java:26)
 	at co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest.testAddTopicNull(TsscTopicServiceTest.java:87)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -274,57 +801,42 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@fad74ee</td></tr>
-<tr>
-<td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest.testUpdateGame1()'><b>testUpdateGame1</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest</td>
-<td></td>
-<td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0</td></tr>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@4d3167f4</td></tr>
 <tr>
 <td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest.testUpdateGame2()'><b>testUpdateGame2</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest</td>
 <td></td>
 <td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0</td></tr>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@76a3e297</td></tr>
 <tr>
 <td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest.testUpdateGame3()'><b>testUpdateGame3</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest</td>
 <td></td>
 <td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@36b4cef0</td></tr>
-<tr>
-<td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest.testUpdateStory1()'><b>testUpdateStory1</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest</td>
-<td></td>
-<td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20</td></tr>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest@76a3e297</td></tr>
 <tr>
 <td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest.testUpdateStory2()'><b>testUpdateStory2</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest</td>
 <td></td>
 <td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20</td></tr>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3aeaafa6</td></tr>
 <tr>
 <td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest.testUpdateStory3()'><b>testUpdateStory3</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest</td>
 <td></td>
 <td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20</td></tr>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3aeaafa6</td></tr>
 <tr>
 <td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest.testUpdateStory4()'><b>testUpdateStory4</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest</td>
 <td></td>
 <td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3d921e20</td></tr>
-<tr>
-<td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest.testUpdateTopic1()'><b>testUpdateTopic1</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest<br>Test method: Update the topic without errors</td>
-<td></td>
-<td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@fad74ee</td></tr>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest@3aeaafa6</td></tr>
 <tr>
 <td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest.testUpdateTopic2()'><b>testUpdateTopic2</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest<br>Test method: Update a topic where groups are not greater than zero</td>
 <td></td>
 <td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@fad74ee</td></tr>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@4d3167f4</td></tr>
 <tr>
 <td title='co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest.testUpdateTopic3()'><b>testUpdateTopic3</b><br>Test class: co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest<br>Test method: Update a topic where sprints are not greater than zero</td>
 <td></td>
 <td>0</td>
-<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@fad74ee</td></tr>
+<td>co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest@4d3167f4</td></tr>
 </table><p>
 </body>
 </html>

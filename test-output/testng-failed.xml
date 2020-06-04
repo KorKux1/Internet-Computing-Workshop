@@ -3,18 +3,33 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest">
+      <class name="co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest">
         <methods>
-          <include name="springTestContextBeforeTestClass"/>
-          <include name="initUpdates"/>
-          <include name="initialize"/>
-          <include name="springTestContextPrepareTestInstance"/>
-          <include name="springTestContextAfterTestClass"/>
-          <include name="springTestContextBeforeTestMethod"/>
-          <include name="springTestContextAfterTestMethod"/>
-          <include name="testUpdateStory4"/>
+          <include name="testUpdateTopic1"/>
+          <include name="testAddTopic1"/>
+          <include name="iniMock"/>
         </methods>
-      </class> <!-- co.edu.icesi.internetcomputing.workshop.integration_tests.TsscStoryServiceTest -->
+      </class> <!-- co.edu.icesi.internetcomputing.workshop.unit_tests.TsscTopicServiceTest -->
+      <class name="co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest">
+        <methods>
+          <include name="testAddGame1"/>
+          <include name="initialize"/>
+          <include name="testAddGame4"/>
+          <include name="iniMock"/>
+          <include name="testUpdateGame1"/>
+          <include name="initializeUpdate"/>
+          <include name="testAdd2Game1"/>
+        </methods>
+      </class> <!-- co.edu.icesi.internetcomputing.workshop.unit_tests.TsscGameServiceTest -->
+      <class name="co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest">
+        <methods>
+          <include name="initialize"/>
+          <include name="testUpdateStory1"/>
+          <include name="testAddStory1"/>
+          <include name="iniMock"/>
+          <include name="initializeUpdate"/>
+        </methods>
+      </class> <!-- co.edu.icesi.internetcomputing.workshop.unit_tests.TsscStoryServiceTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

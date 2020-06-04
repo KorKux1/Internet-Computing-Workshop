@@ -208,9 +208,4 @@ public class TsscStoryServiceTest  extends AbstractTestNGSpringContextTests {
 
 	}
 	
-	
-	
-	
-	
-	
 }

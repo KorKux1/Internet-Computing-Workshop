@@ -19,7 +19,6 @@ import org.testng.annotations.Test;
 
 import co.edu.icesi.internetcomputing.workshop.model.TsscGame;
 import co.edu.icesi.internetcomputing.workshop.model.TsscStory;
-import co.edu.icesi.internetcomputing.workshop.model.TsscTopic;
 import co.edu.icesi.internetcomputing.workshop.repositories.TsscGameRepository;
 import co.edu.icesi.internetcomputing.workshop.repositories.TsscStoryRepository;
 import co.edu.icesi.internetcomputing.workshop.services.TsscStoryServiceImp;
