@@ -25,8 +25,6 @@ public class TsscStoryController {
 	@Autowired
 	private TsscStoryServiceImp tsscStoryServiceImp;
 	
-	@Autowired
-	
 	@GetMapping("/stories")
 	public String index(Model model) {
 		model.addAttribute("stories", tsscStoryDelegate.getAllStories());
