@@ -13,6 +13,8 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
+import static org.testng.Assert.fail;
+
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -84,6 +86,20 @@ public class TestAdminDelegate {
 			size++;
 		}
 		assertEquals(size, 2);
+	}
+	
+	@Test
+	public void updateAdminTest() {
+		TsscAdmin admin = new TsscAdmin();
+		admin.setUsername("Gojan");
+		TransactionBody<TsscAdmin> body = new TransactionBody<TsscAdmin>();
+		body.setBody(admin);
+		ResponseEntity<TransactionBody<TsscAdmin>> response = new ResponseEntity<TransactionBody<TsscAdmin>>(body, HttpStatus.ACCEPTED);
+		when(restTemplate.exchange(Mockito.anyString(),Mockito.any(HttpMethod.class),Mockito.any(HttpEntity.class),Mockito.any(ParameterizedTypeReference.class))).thenReturn(response);
+		admin.setUsername("Gohan");
+		adminDelegate.updateAdmin(admin);
+		TsscAdmin adminN = adminDelegate.getAdmin(admin.getId());
+		assertEquals("Gohan", adminN.getUsername());
 	}
 	
 }

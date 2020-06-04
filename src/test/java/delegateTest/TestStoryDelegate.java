@@ -42,7 +42,7 @@ public class TestStoryDelegate {
 	}
 	
 	@Test
-	public void addAdminTest() {
+	public void addStoryTest() {
 		TsscStory story = new TsscStory();
 		story.setDescription("Goku");
 		TransactionBody<TsscStory> body = new TransactionBody<TsscStory>();
@@ -54,7 +54,7 @@ public class TestStoryDelegate {
 	}
 	
 	@Test
-	public void getAdminTest() {
+	public void getStoryTest() {
 		TsscStory story = new TsscStory();
 		story.setDescription("Vegeta");
 		TransactionBody<TsscStory> body = new TransactionBody<TsscStory>();
@@ -66,7 +66,7 @@ public class TestStoryDelegate {
 	}
 	
 	@Test
-	public void getAllAdminTest() {
+	public void getAllStoryTest() {
 		TransactionBody<List<TsscStory>> body = new TransactionBody<List<TsscStory>>();
 		List<TsscStory> list = new ArrayList<TsscStory>();
 		TsscStory story1 = new TsscStory();
@@ -84,6 +84,20 @@ public class TestStoryDelegate {
 			size++;
 		}
 		assertEquals(size, 2);
+	}
+	
+	@Test
+	public void updateStoryTest() {
+		TsscStory story = new TsscStory();
+		story.setDescription("Gojan");
+		TransactionBody<TsscStory> body = new TransactionBody<TsscStory>();
+		body.setBody(story);
+		ResponseEntity<TransactionBody<TsscStory>> response = new ResponseEntity<TransactionBody<TsscStory>>(body, HttpStatus.ACCEPTED);
+		when(restTemplate.exchange(Mockito.anyString(),Mockito.any(HttpMethod.class),Mockito.any(HttpEntity.class),Mockito.any(ParameterizedTypeReference.class))).thenReturn(response);
+		story.setDescription("Gohan");
+		storyDelegate.updateStory(story);
+		TsscStory storyN = storyDelegate.getStory(story.getId());
+		assertEquals("Gohan", storyN.getDescription());
 	}
 	
 }

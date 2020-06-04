@@ -42,7 +42,7 @@ public class TestTopicDelegate {
 	}
 	
 	@Test
-	public void addAdminTest() {
+	public void addTopicTest() {
 		TsscTopic topic = new TsscTopic();
 		topic.setName("Goku");
 		TransactionBody<TsscTopic> body = new TransactionBody<TsscTopic>();
@@ -54,7 +54,7 @@ public class TestTopicDelegate {
 	}
 	
 	@Test
-	public void getAdminTest() {
+	public void getTopicTest() {
 		TsscTopic topic = new TsscTopic();
 		topic.setName("Vegeta");
 		TransactionBody<TsscTopic> body = new TransactionBody<TsscTopic>();
@@ -66,7 +66,7 @@ public class TestTopicDelegate {
 	}
 	
 	@Test
-	public void getAllAdminTest() {
+	public void getAllTopicTest() {
 		TransactionBody<List<TsscTopic>> body = new TransactionBody<List<TsscTopic>>();
 		List<TsscTopic> list = new ArrayList<TsscTopic>();
 		TsscTopic topic1 = new TsscTopic();
@@ -84,6 +84,20 @@ public class TestTopicDelegate {
 			size++;
 		}
 		assertEquals(size, 2);
+	}
+	
+	@Test
+	public void updateTopicTest() {
+		TsscTopic topic = new TsscTopic();
+		topic.setDescription("Gojan");
+		TransactionBody<TsscTopic> body = new TransactionBody<TsscTopic>();
+		body.setBody(topic);
+		ResponseEntity<TransactionBody<TsscTopic>> response = new ResponseEntity<TransactionBody<TsscTopic>>(body, HttpStatus.ACCEPTED);
+		when(restTemplate.exchange(Mockito.anyString(),Mockito.any(HttpMethod.class),Mockito.any(HttpEntity.class),Mockito.any(ParameterizedTypeReference.class))).thenReturn(response);
+		topic.setDescription("Gohan");
+		topicDelegate.updateTopic(topic);
+		TsscTopic topicN = topicDelegate.getTopic(topic.getId());
+		assertEquals("Gohan", topicN.getDescription());
 	}
 	
 }
