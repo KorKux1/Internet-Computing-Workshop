@@ -3,6 +3,7 @@ package co.edu.icesi.internetcomputing.workshop.model;
 import java.io.Serializable;
 
 public class TransactionBody<T> implements Serializable {
+	
 	/**
 	 * 
 	 */

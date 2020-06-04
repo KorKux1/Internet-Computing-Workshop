@@ -42,7 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 		httpSecurity.csrf().disable().
 		authorizeRequests().antMatchers("/topics/**").hasRole("SUPER_ADMIN")
-		.antMatchers("/**").authenticated().and()
+		.antMatchers("/").authenticated().and()
 		.authorizeRequests().antMatchers("/api/**").permitAll()
 		.and().logout().invalidateHttpSession(true).clearAuthentication(true)
 		.logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login?logout").permitAll()
