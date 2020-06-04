@@ -32,7 +32,11 @@
 								<th>Editar</th>
 								<th>Historias</th>
 								<th>Tema</th>
+<<<<<<< HEAD
 								<th>Cronogramas</th>
+=======
+								<th>Borrar</th>
+>>>>>>> 2c5f0d8f834ec9904f25b1df4c27f5aaba5cda94
 							</tr>
 						</thead>
 						<tbody>
@@ -49,9 +53,14 @@
 									class="btn btn-primary"><i class="fas fa-sticky-note"></i></a></td>
 								<td><a th:href="@{/topics/edit/{id}(id=${game.id})}"
 									class="btn btn-primary"><i class="fas fa-drum-steelpan"></i></a></td>
+<<<<<<< HEAD
 								<td><a th:href="@{/game/timecontrol/{id}(id=${game.id})}"
 									class="btn btn-primary"><i class="fas fa-archway"></i></a></td>
 
+=======
+								<td><a th:href="@{/games/del/{id}(id=${game.id})}"
+									class="btn btn-primary"><i class="fas fa-trash-alt"></i></a></td>
+>>>>>>> 2c5f0d8f834ec9904f25b1df4c27f5aaba5cda94
 							</tr>
 						</tbody>
 					</table>

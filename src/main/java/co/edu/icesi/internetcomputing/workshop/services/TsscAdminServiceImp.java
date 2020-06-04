@@ -18,9 +18,8 @@ public class TsscAdminServiceImp implements TsscAdminService {
 	
 	@Override
 	@Transactional
-	public TsscAdmin save(TsscAdmin tsscAdmin) {
+	public void save(TsscAdmin tsscAdmin) {
 		tsscAdminDao.save(tsscAdmin);
-		return tsscAdmin;
 	}
 
 	@Override
@@ -39,6 +38,11 @@ public class TsscAdminServiceImp implements TsscAdminService {
 	@Transactional
 	public TsscAdmin findById(Long id) {
 		return tsscAdminDao.findById(id);
+	}
+
+	@Override
+	public void update(TsscAdmin tsscAdmin) {
+		tsscAdminDao.update(tsscAdmin);;
 	}
 
 }

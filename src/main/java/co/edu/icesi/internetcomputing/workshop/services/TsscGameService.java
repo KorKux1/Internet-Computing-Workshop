@@ -13,4 +13,8 @@ public interface TsscGameService {
 	public boolean save(TsscGame tsscGame);
 	
 	public boolean save2(TsscGame tsscGame);
+
+	public void remove(TsscGame tsscGame);
+	
+	public void update(TsscGame tsscGame);
 }

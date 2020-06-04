@@ -4,8 +4,10 @@ import co.edu.icesi.internetcomputing.workshop.model.TsscAdmin;
 
 public interface TsscAdminService {
 	
-	public TsscAdmin save(TsscAdmin tsscAdmin);
+	public void save(TsscAdmin tsscAdmin);
 	
+	public void update(TsscAdmin tsscAdmin);
+
 	public void remove(TsscAdmin tsscAdmin);
 	
 	public Iterable<TsscAdmin> getAllAdmins();

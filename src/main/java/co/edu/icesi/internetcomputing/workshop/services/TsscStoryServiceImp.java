@@ -15,6 +15,7 @@ import co.edu.icesi.internetcomputing.workshop.model.TsscStory;
 public class TsscStoryServiceImp implements TsscStoryService {
 
 	private TsscStoryDao tsscStoryDao;
+	
 	private TsscGameDao tsscGameDao;
 	
 	@Autowired
@@ -66,6 +67,11 @@ public class TsscStoryServiceImp implements TsscStoryService {
 	
 	public void delete(TsscStory story) {
 		tsscStoryDao.delete(story);
+	}
+
+	@Override
+	public void remove(TsscStory tsscStory) {
+		tsscStoryDao.delete(tsscStory);	
 	}
 
 }

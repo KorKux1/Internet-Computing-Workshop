@@ -1,6 +1,5 @@
 package co.edu.icesi.internetcomputing.workshop.services;
 
-import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,6 +85,16 @@ public class TsscGameServiceImp implements TsscGameService {
 	@Override
 	public Iterable<TsscGame> findAll() {
 		return tsscGameDao.findAll();
+	}
+
+	@Override
+	public void remove(TsscGame tsscGame) {
+		tsscGameDao.delete(tsscGame);
+	}
+
+	@Override
+	public void update(TsscGame tsscGame) {
+		tsscGameDao.update(tsscGame);		
 	}
 	
 }

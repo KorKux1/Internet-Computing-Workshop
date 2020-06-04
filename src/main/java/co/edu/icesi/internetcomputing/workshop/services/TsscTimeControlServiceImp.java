@@ -33,16 +33,18 @@ public class TsscTimeControlServiceImp implements TsscTimeControlService{
 	}
 	
 	@Override
+	public void remove(TsscTimecontrol entity) {
+		tsscTimeControlDao.delete(entity);
+	}
+
+	@Override
 	public TsscTimecontrol findById(long id) {
 		return tsscTimeControlDao.findById(id);
 	}
 	
+	@Override
 	public Iterable<TsscTimecontrol> findAll() {
 		return tsscTimeControlDao.findAll();
 	}
-	
-	public void delete(Long id) {
-		tsscTimeControlDao.delete(findById(id));
-	}
-	
+
 }

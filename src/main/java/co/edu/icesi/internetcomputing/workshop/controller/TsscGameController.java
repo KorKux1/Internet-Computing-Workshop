@@ -12,32 +12,30 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import co.edu.icesi.internetcomputing.workshop.delegate.TsscGameDelegate;
 import co.edu.icesi.internetcomputing.workshop.model.TsscGame;
 import co.edu.icesi.internetcomputing.workshop.model.TsscGame.GameValidator;
-import co.edu.icesi.internetcomputing.workshop.model.TsscTimecontrol;
 import co.edu.icesi.internetcomputing.workshop.services.TsscGameServiceImp;
-import co.edu.icesi.internetcomputing.workshop.services.TsscTimeControlServiceImp;
-import co.edu.icesi.internetcomputing.workshop.services.TsscTopicServiceImp;
 
 @Controller
 public class TsscGameController {
 	
 	@Autowired
-	private TsscGameServiceImp tsscGameServiceImp;
+	TsscGameDelegate tsscGameDelegate;
 	
 	@Autowired
-	private TsscTopicServiceImp tsscTopicServiceImp;
+	private TsscGameServiceImp tsscGameServiceImp;
 	
 	@GetMapping("/games")
 	public String index(Model model) {
-		model.addAttribute("games", tsscGameServiceImp.findAll());
+		model.addAttribute("games", tsscGameDelegate.getAllGames());
 		return "games/index";
 	}
 	
 	@GetMapping("/game/add")
 	public String add(Model model) {
 		model.addAttribute("tsscGame", new TsscGame());
-		model.addAttribute("topics", tsscGameServiceImp.findAll());
+		model.addAttribute("topics", tsscGameDelegate.getAllGames());
 		return "games/add";
 	}
 	
@@ -51,7 +49,7 @@ public class TsscGameController {
 		model.addAttribute("nSprints", tsscGame.getNSprints());
 		model.addAttribute("userPassword", tsscGame.getUserPassword());
 		model.addAttribute("guestPassword", tsscGame.getGuestPassword());
-		model.addAttribute("topics", tsscGameServiceImp.findAll());
+		model.addAttribute("topics", tsscGameDelegate.getAllGames());
 		
 		if (action.equals("Cancelar")) {
 			return "redirect:/games/";
@@ -62,17 +60,18 @@ public class TsscGameController {
 		}
 		
 		if (tsscGame.getTsscTopic() == null) {
-			tsscGameServiceImp.save(tsscGame);
+			tsscGameDelegate.addGame(tsscGame);
 		}
 		else {
-			tsscGameServiceImp.save2(tsscGame);
+			tsscGameDelegate.addGame(tsscGame);
+			//tsscGameServiceImp.save2(tsscGame);
 		}
 		return "redirect:/games/";
 	}
 	
 	@GetMapping("/games/{id}/stories")
 	public String indexStories(@PathVariable("id") long id, Model model) {
-		TsscGame tsscGame = tsscGameServiceImp.findById(id);
+		TsscGame tsscGame = tsscGameDelegate.getGame(id);
 		if(tsscGame == null) {
 			throw new IllegalArgumentException("Id Invalido:" + id);
 		}
@@ -83,7 +82,7 @@ public class TsscGameController {
 	
 	@GetMapping("/games/edit/{id}")
 	public String edit(@PathVariable("id") long id, Model model) {
-		TsscGame tsscGame = tsscGameServiceImp.findById(id);
+		TsscGame tsscGame = tsscGameDelegate.getGame(id);
 		if (tsscGame == null) {
 			throw new IllegalArgumentException("Id Incorrecto:" + id);
 		}
@@ -96,7 +95,7 @@ public class TsscGameController {
 		model.addAttribute("nSprints", tsscGame.getNSprints());
 		model.addAttribute("userPassword", tsscGame.getUserPassword());
 		model.addAttribute("guestPassword", tsscGame.getGuestPassword());
-		model.addAttribute("topics", tsscTopicServiceImp.findAll());
+		model.addAttribute("topics", tsscGameDelegate.getAllGames());
 
 		return "games/edit";	
 	}
@@ -111,7 +110,7 @@ public class TsscGameController {
 		model.addAttribute("nSprints", tsscGame.getNSprints());
 		model.addAttribute("userPassword", tsscGame.getUserPassword());
 		model.addAttribute("guestPassword", tsscGame.getGuestPassword());
-		model.addAttribute("topics", tsscTopicServiceImp.findAll());
+		model.addAttribute("topics", tsscGameDelegate.getAllGames());
 		
 		
 		if (action.equals("Cancelar")) {
@@ -123,11 +122,23 @@ public class TsscGameController {
 		}	
 		
 		if (tsscGame.getTsscTopic() == null) {
-			tsscGameServiceImp.save(tsscGame);
+			tsscGameDelegate.updateGame(tsscGame);
 		}
 		else {
-			tsscGameServiceImp.save2(tsscGame);
+			tsscGameDelegate.updateGame(tsscGame);
 		}
+		return "redirect:/games/";
+	}
+	
+	@GetMapping("/games/del/{id}")
+	public String deleteGame(@PathVariable("id") long id) {
+	
+		try {
+			tsscGameDelegate.removeGame(tsscGameDelegate.getGame(id));
+		} catch (Exception e) {
+			new IllegalArgumentException("Invalid game Id:" + id);
+		}
+		
 		return "redirect:/games/";
 	}
 	
