@@ -14,13 +14,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import co.edu.icesi.internetcomputing.workshop.delegate.TsscStoryDelegate;
 import co.edu.icesi.internetcomputing.workshop.model.TsscStory;
 import co.edu.icesi.internetcomputing.workshop.model.TsscStory.StoryValidator;
+import co.edu.icesi.internetcomputing.workshop.services.TsscGameServiceImp;
 import co.edu.icesi.internetcomputing.workshop.services.TsscStoryServiceImp;
 
 @Controller
 public class TsscStoryController {
 	
 	@Autowired
-	TsscStoryDelegate tsscStoryDelegate;
+	private TsscStoryDelegate tsscStoryDelegate;
+	
+	@Autowired
+	private TsscGameServiceImp gameService;
 	
 	@Autowired
 	private TsscStoryServiceImp tsscStoryServiceImp;
@@ -34,7 +38,7 @@ public class TsscStoryController {
 	@GetMapping("/story/add")
 	public String add(Model model) {
 		model.addAttribute("tsscStory", new TsscStory());
-		model.addAttribute("games", tsscStoryDelegate.getAllStories());
+		model.addAttribute("games", gameService.findAll());
 		return "stories/add";
 	}
 	
